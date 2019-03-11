@@ -207,3 +207,21 @@ CREATE TABLE LOOKUP_EMPLOYEE_ROLES(
 	IsAdmin bit NOT NULL,
 	CONSTRAINT PK_EmployeeRoleID PRIMARY KEY(RoleID)
 );
+
+DROP TABLE IF EXISTS MANUFACTURERS;
+
+CREATE TABLE MANUFACTURERS(
+	ManufacturerID uniqueidentifier NOT NULL,
+	ManufacturerName varchar(200) NOT NULL,
+	ManufacturerStreetAddress varchar(250) NOT NULL,
+	ManufacturerStreetAddress2 varchar(250) NULL,
+	ManufacturerCity varchar(100) NOT NULL,
+	ManufacturerState varchar(2) NOT NULL,
+	ManufacturerZip varchar(10) NOT NULL,
+	ManufacturerPhone varchar(12) NOT NULL,
+	ManufacturerEmail varchar(80) NOT NULL,
+	ContactName varchar(100) NULL,
+	ManufacturerDateCreated datetime NOT NULL,
+	ManufacturerDateLastModified datetime NOT NULL,
+	CONSTRAINT PK_ManufacturerID PRIMARY KEY(ManufacturerID)
+);
