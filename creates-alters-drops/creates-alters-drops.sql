@@ -28,3 +28,24 @@ CREATE TABLE LOOKUP_STATES(
 	StateName varchar(30) NOT NULL,
 	CONSTRAINT PK_State PRIMARY KEY(State)
 );
+
+DROP TABLE IF EXISTS CUSTOMERS;
+
+CREATE TABLE CUSTOMERS(
+	CustomerID uniqueidentifier NOT NULL,
+	CustomerFirstName varchar(100) NOT NULL,
+	CustomerLastName varchar(100) NOT NULL,
+	CustomerStreetAddress varchar(250) NULL,
+	CustomerStreetAddress2 varchar(250) NULL,
+	CustomerCity varchar(100) NULL,
+	CustomerState varchar(2) NULL,
+	CustomerZip varchar(10) NULL,
+	CustomerPhone varchar(12) NULL,
+	CustomerEmail varchar(80) NOT NULL,
+	IsEmailVerified bit NOT NULL,
+	Gender varchar(1) NULL,
+	BirthDate date NULL,
+	CustomerDateCreated datetime NOT NULL,
+	CustomerDateLastModified datetime NOT NULL,
+	CONSTRAINT PK_CustomerID PRIMARY KEY(CustomerID)
+);
