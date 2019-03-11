@@ -177,3 +177,24 @@ CREATE TABLE PRODUCT_PRICE_HISTORY(
 	ProductPriceHistoryComments varchar(500) NULL,
 	CONSTRAINT PK_ProductPriceHistory PRIMARY KEY(ProductPriceHistoryID)
 );
+
+DROP TABLE IF EXISTS EMPLOYEES;
+
+CREATE TABLE EMPLOYEES(
+	EmployeeID uniqueidentifier NOT NULL,
+	EmployeeFirstName varchar(100) NOT NULL,
+	EmployeeLastName varchar(100) NOT NULL,
+	RoleID uniqueidentifier NOT NULL,
+	HireDate date NOT NULL,
+	IsCurrentlyEmployed bit NOT NULL,
+	EmployeeStreetAddress varchar(250) NOT NULL,
+	EmployeeStreetAddress2 varchar(250) NULL,
+	EmployeeCity varchar(100) NOT NULL,
+	EmployeeState varchar(2) NOT NULL,
+	EmployeeZip varchar(10) NOT NULL,
+	EmployeePhone varchar(12) NOT NULL,
+	EmployeeEmail varchar(80) NOT NULL,
+	EmployeeDateCreated datetime NOT NULL,
+	EmployeeDateLastModified datetime NOT NULL,
+	CONSTRAINT PK_EmployeeID PRIMARY KEY(EmployeeID)
+);
