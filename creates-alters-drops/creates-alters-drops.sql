@@ -166,3 +166,14 @@ CREATE TABLE MANUFACTURED_PRODUCTS(
 	MSRP smallmoney NULL,
 	CONSTRAINT PK_ManufacturedProductID PRIMARY KEY(ProductID)
 );
+
+DROP TABLE IF EXISTS PRODUCT_PRICE_HISTORY;
+
+CREATE TABLE PRODUCT_PRICE_HISTORY(
+	ProductPriceHistoryID uniqueidentifier NOT NULL,
+	ProductID uniqueidentifier NOT NULL,
+	ProductPriceHistoryUnitPrice smallmoney NOT NULL,
+	ProductPriceHistoryDateModified datetime NOT NULL,
+	ProductPriceHistoryComments varchar(500) NULL,
+	CONSTRAINT PK_ProductPriceHistory PRIMARY KEY(ProductPriceHistoryID)
+);
