@@ -62,3 +62,14 @@ CREATE TABLE ORDERS(
 	OrderTotal smallmoney NOT NULL,
 	CONSTRAINT PK_OrderID PRIMARY KEY(OrderID)
 );
+
+DROP TABLE IF EXISTS CUSTOMER_PREFERENCES;
+
+CREATE TABLE CUSTOMER_PREFERENCES(
+	CustomerID uniqueidentifier NOT NULL,
+	ProductTypeID uniqueidentifier NOT NULL,
+	PreferenceWeight tinyint NULL,
+	Artisan bit NOT NULL,
+	Manufactured bit NOT NULL,
+	CONSTRAINT PK_CustomerPreferences PRIMARY KEY(CustomerID,ProductTypeID)
+);
