@@ -122,3 +122,14 @@ CREATE TABLE ARTIST_COMMISSION_HISTORY(
 	ArtistCommissionHistoryComments varchar(500) NULL,
 	CONSTRAINT PK_ArtistCommissionHistoryID PRIMARY KEY(ArtistCommissionHistoryID)
 );
+
+DROP TABLE IF EXISTS ORDER_DETAILS;
+
+CREATE TABLE ORDER_DETAILS(
+	ProductID uniqueidentifier NOT NULL,
+	OrderID int NOT NULL,
+	OrderLineNumber tinyint NOT NULL,
+	QuantityOrdered smallint NOT NULL,
+	PriceEach smallmoney NOT NULL,
+	CONSTRAINT PK_OrderDetails PRIMARY KEY(ProductID,OrderID)
+);
