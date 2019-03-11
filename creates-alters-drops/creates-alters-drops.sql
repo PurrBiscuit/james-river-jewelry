@@ -156,3 +156,13 @@ CREATE TABLE ARTISAN_PRODUCTS(
 	ArtisanProductDatePurchased datetime NULL,
 	CONSTRAINT PK_ArtisanProductID PRIMARY KEY(ProductID)
 );
+
+DROP TABLE IF EXISTS MANUFACTURED_PRODUCTS;
+
+CREATE TABLE MANUFACTURED_PRODUCTS(
+	ProductID uniqueidentifier NOT NULL,
+	ManufacturerID uniqueidentifier NOT NULL,
+	QuantityInStock smallint NOT NULL,
+	MSRP smallmoney NULL,
+	CONSTRAINT PK_ManufacturedProductID PRIMARY KEY(ProductID)
+);
