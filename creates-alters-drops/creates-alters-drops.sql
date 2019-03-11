@@ -133,3 +133,14 @@ CREATE TABLE ORDER_DETAILS(
 	PriceEach smallmoney NOT NULL,
 	CONSTRAINT PK_OrderDetails PRIMARY KEY(ProductID,OrderID)
 );
+
+DROP TABLE IF EXISTS PRODUCTS;
+
+CREATE TABLE PRODUCTS(
+	ProductID uniqueidentifier NOT NULL,
+	ProductTypeID uniqueidentifier NOT NULL,
+	ProductName varchar(200) NOT NULL,
+	UnitPrice smallmoney NOT NULL,
+	IsManufactured bit NOT NULL,
+	CONSTRAINT PK_ProductID PRIMARY KEY(ProductID)
+);
