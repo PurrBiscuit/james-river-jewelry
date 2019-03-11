@@ -49,3 +49,16 @@ CREATE TABLE CUSTOMERS(
 	CustomerDateLastModified datetime NOT NULL,
 	CONSTRAINT PK_CustomerID PRIMARY KEY(CustomerID)
 );
+
+DROP TABLE IF EXISTS ORDERS;
+
+CREATE TABLE ORDERS(
+	OrderID int IDENTITY(1000,1),
+	CustomerID uniqueidentifier NOT NULL,
+	EmployeeID uniqueidentifier NOT NULL,
+	OrderDate datetime NOT NULL,
+	PreTaxTotal smallmoney NOT NULL,
+	TaxAmount smallmoney NOT NULL,
+	OrderTotal smallmoney NOT NULL,
+	CONSTRAINT PK_OrderID PRIMARY KEY(OrderID)
+);
