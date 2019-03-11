@@ -144,3 +144,15 @@ CREATE TABLE PRODUCTS(
 	IsManufactured bit NOT NULL,
 	CONSTRAINT PK_ProductID PRIMARY KEY(ProductID)
 );
+
+DROP TABLE IF EXISTS ARTISAN_PRODUCTS;
+
+CREATE TABLE ARTISAN_PRODUCTS(
+	ProductID uniqueidentifier NOT NULL,
+	ArtistID uniqueidentifier NOT NULL,
+	ArtisanProductCommission tinyint NOT NULL,
+	ArtisanProductDateReceived datetime NOT NULL,
+	ArtisanProductDateListed datetime NULL,
+	ArtisanProductDatePurchased datetime NULL,
+	CONSTRAINT PK_ArtisanProductID PRIMARY KEY(ProductID)
+);
