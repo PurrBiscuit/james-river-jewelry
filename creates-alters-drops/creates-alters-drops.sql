@@ -82,3 +82,24 @@ CREATE TABLE PRODUCT_TYPES(
 	CONSTRAINT PK_ProductTypeID PRIMARY KEY(ProductTypeID)
 );
 
+DROP TABLE IF EXISTS ARTISTS;
+
+CREATE TABLE ARTISTS(
+	ArtistID uniqueidentifier NOT NULL,
+	ArtistFirstName varchar(100) NOT NULL,
+	ArtistLastName varchar(100) NOT NULL,
+	ArtistStreetAddress varchar(250) NOT NULL,
+	ArtistStreetAddress2 varchar(250) NULL,
+	ArtistStreetAddress3 varchar(250) NULL,
+	ArtistCity varchar(100) NOT NULL,
+	Region varchar(80) NULL,
+	PostalCode varchar(50) NOT NULL,
+	County varchar(80) NULL,
+	Country varchar(2) NOT NULL,
+	ArtistPhone varchar(25) NULL,
+	ArtistEmail varchar(80) NOT NULL,
+	BaseCommission tinyint NOT NULL,
+	ArtistDateCreated datetime NOT NULL,
+	ArtistDateLastModified datetime NOT NULL,
+	CONSTRAINT PK_ArtistID PRIMARY KEY(ArtistID)
+);
