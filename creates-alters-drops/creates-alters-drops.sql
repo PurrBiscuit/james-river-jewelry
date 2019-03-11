@@ -73,3 +73,12 @@ CREATE TABLE CUSTOMER_PREFERENCES(
 	Manufactured bit NOT NULL,
 	CONSTRAINT PK_CustomerPreferences PRIMARY KEY(CustomerID,ProductTypeID)
 );
+
+DROP TABLE IF EXISTS PRODUCT_TYPES;
+
+CREATE TABLE PRODUCT_TYPES(
+	ProductTypeID uniqueidentifier NOT NULL,
+	ProductTypeName varchar(100) NOT NULL,
+	CONSTRAINT PK_ProductTypeID PRIMARY KEY(ProductTypeID)
+);
+
