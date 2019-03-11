@@ -111,3 +111,14 @@ CREATE TABLE LOOKUP_COUNTRIES(
 	CountryName varchar(100) NOT NULL,
 	CONSTRAINT PK_Country PRIMARY KEY(Country)
 );
+
+DROP TABLE IF EXISTS ARTIST_COMMISSION_HISTORY;
+
+CREATE TABLE ARTIST_COMMISSION_HISTORY(
+	ArtistCommissionHistoryID uniqueidentifier NOT NULL,
+	ArtistID uniqueidentifier NOT NULL,
+	ArtistCommissionHistoryBaseCommission tinyint NOT NULL,
+	ArtistCommissionHistoryDateModified datetime NOT NULL,
+	ArtistCommissionHistoryComments varchar(500) NULL,
+	CONSTRAINT PK_ArtistCommissionHistoryID PRIMARY KEY(ArtistCommissionHistoryID)
+);
