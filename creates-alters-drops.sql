@@ -100,7 +100,7 @@ CREATE TABLE ARTISTS(
 	Country varchar(2) NOT NULL,
 	ArtistPhone varchar(25) NULL,
 	ArtistEmail varchar(80) NOT NULL,
-	BaseCommission tinyint NOT NULL,
+	BaseCommission tinyint NOT NULL DEFAULT 60,
 	ArtistDateCreated datetime NOT NULL,
 	ArtistDateLastModified datetime NOT NULL,
 	CONSTRAINT PK_ArtistID PRIMARY KEY(ArtistID)
