@@ -53,14 +53,16 @@ CREATE TABLE CUSTOMERS(
 DROP TABLE IF EXISTS ORDERS;
 
 CREATE TABLE ORDERS(
-	OrderID int IDENTITY(1000,1),
+	OrderID uniqueidentifier NOT NULL,
 	CustomerID uniqueidentifier NOT NULL,
 	EmployeeID uniqueidentifier NOT NULL,
+	InvoiceNumber int NOT NULL,
 	OrderDate datetime NOT NULL,
 	PreTaxTotal smallmoney NOT NULL,
 	TaxAmount smallmoney NOT NULL,
 	OrderTotal smallmoney NOT NULL,
-	CONSTRAINT PK_OrderID PRIMARY KEY(OrderID)
+	CONSTRAINT PK_OrderID PRIMARY KEY(OrderID),
+	CONSTRAINT AK_InvoiceNumber UNIQUE(InvoiceNumber)
 );
 
 DROP TABLE IF EXISTS CUSTOMER_PREFERENCES;
@@ -127,7 +129,7 @@ DROP TABLE IF EXISTS ORDER_DETAILS;
 
 CREATE TABLE ORDER_DETAILS(
 	ProductID uniqueidentifier NOT NULL,
-	OrderID int NOT NULL,
+	OrderID uniqueidentifier NOT NULL,
 	OrderLineNumber tinyint NOT NULL,
 	QuantityOrdered smallint NOT NULL,
 	PriceEach smallmoney NOT NULL,
