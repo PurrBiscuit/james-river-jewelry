@@ -71,7 +71,7 @@ CREATE TABLE CUSTOMER_PREFERENCES(
 	CustomerID uniqueidentifier NOT NULL,
 	ProductTypeID uniqueidentifier NOT NULL,
 	PreferenceWeight tinyint NULL,
-	Artisan bit NOT NULL,
+	Artisan bit NOT NULL DEFAULT 1,
 	Manufactured bit NOT NULL,
 	CONSTRAINT PK_CustomerPreferences PRIMARY KEY(CustomerID,ProductTypeID)
 );
