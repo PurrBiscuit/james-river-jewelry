@@ -234,3 +234,15 @@ CREATE TABLE TAX_RATES(
 	TaxRatePercentage tinyint NOT NULL,
 	CONSTRAINT PK_TaxRateID PRIMARY KEY(TaxRateID)
 );
+
+DROP TABLE IF EXISTS MANUFACTURED_PURCHASE_HISTORY;
+
+CREATE TABLE MANUFACTURED_PURCHASE_HISTORY(
+	ManufacturedPurchaseHistoryID uniqueidentifier NOT NULL,
+	ProductID uniqueidentifier NOT NULL,
+	ManufacturedPurchaseHistoryDatePurchased datetime NOT NULL,
+	ManufacturedPurchaseHistoryQuantity smallint NOT NULL,
+	ManufacturedPurchaseHistoryPurchasePrice smallmoney NOT NULL,
+	ManufacturedPurchaseHistoryDateReceived datetime NULL,
+	CONSTRAINT PK_ManufacturedPurchaseHistoryID PRIMARY KEY(ManufacturedPurchaseHistoryID)
+);
