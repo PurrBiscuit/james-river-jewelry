@@ -131,7 +131,7 @@ CREATE TABLE ORDER_DETAILS(
 	ProductID uniqueidentifier NOT NULL,
 	OrderID uniqueidentifier NOT NULL,
 	OrderLineNumber tinyint NOT NULL,
-	QuantityOrdered smallint NOT NULL,
+	QuantityOrdered smallint NOT NULL DEFAULT 1,
 	PriceEach smallmoney NOT NULL,
 	CONSTRAINT PK_OrderDetails PRIMARY KEY(ProductID,OrderID)
 );
