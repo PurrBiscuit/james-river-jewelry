@@ -17,7 +17,7 @@ CREATE TABLE HISTORIC_REWARDS(
 	HistoricDateEarned date NOT NULL,
 	HistoricAmount smallint NOT NULL,
 	DateMigrated date NOT NULL,
-	Expired bit NOT NULL,
+	Expired bit NOT NULL DEFAULT 0,
 	CONSTRAINT PK_HistoricRewardID PRIMARY KEY(HistoricRewardID)
 );
 
