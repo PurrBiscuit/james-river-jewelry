@@ -164,7 +164,7 @@ DROP TABLE IF EXISTS MANUFACTURED_PRODUCTS;
 CREATE TABLE MANUFACTURED_PRODUCTS(
 	ProductID uniqueidentifier NOT NULL,
 	ManufacturerID uniqueidentifier NOT NULL,
-	QuantityInStock smallint NOT NULL,
+	QuantityInStock smallint NOT NULL DEFAULT 0,
 	MSRP smallmoney NULL,
 	CONSTRAINT PK_ManufacturedProductID PRIMARY KEY(ProductID)
 );
