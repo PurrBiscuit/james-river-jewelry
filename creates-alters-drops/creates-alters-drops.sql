@@ -225,3 +225,12 @@ CREATE TABLE MANUFACTURERS(
 	ManufacturerDateLastModified datetime NOT NULL,
 	CONSTRAINT PK_ManufacturerID PRIMARY KEY(ManufacturerID)
 );
+
+DROP TABLE IF EXISTS TAX_RATES;
+
+CREATE TABLE TAX_RATES(
+	TaxRateID uniqueidentifier NOT NULL,
+	TaxRateDescription varchar(100) NOT NULL,
+	TaxRatePercentage tinyint NOT NULL,
+	CONSTRAINT PK_TaxRateID PRIMARY KEY(TaxRateID)
+);
