@@ -246,3 +246,14 @@ CREATE TABLE MANUFACTURED_PURCHASE_HISTORY(
 	ManufacturedPurchaseHistoryDateReceived datetime NULL,
 	CONSTRAINT PK_ManufacturedPurchaseHistoryID PRIMARY KEY(ManufacturedPurchaseHistoryID)
 );
+
+DROP TABLE IF EXISTS ARTISAN_PRODUCTS_COMMISSION_HISTORY;
+
+CREATE TABLE ARTISAN_PRODUCTS_COMMISSION_HISTORY(
+	ArtisanProductsCommissionHistoryID uniqueidentifier NOT NULL,
+	ProductID uniqueidentifier NOT NULL,
+	ArtisanProductsCommissionHistoryCommission tinyint NOT NULL,
+	ArtisanProductsCommissionHistoryDateModified datetime NOT NULL,
+	ArtisanProductsCommissionHistoryComments varchar(500) NULL,
+	CONSTRAINT PK_ArtisanProductsCommissionHistoryID PRIMARY KEY(ArtisanProductsCommissionHistoryID)
+);
