@@ -42,7 +42,7 @@ CREATE TABLE CUSTOMERS(
 	CustomerZip varchar(10) NULL,
 	CustomerPhone varchar(12) NULL,
 	CustomerEmail varchar(80) NOT NULL,
-	IsEmailVerified bit NOT NULL,
+	IsEmailVerified bit NOT NULL DEFAULT 0,
 	Gender varchar(1) NULL,
 	BirthDate date NULL,
 	CustomerDateCreated datetime NOT NULL,
