@@ -143,7 +143,7 @@ CREATE TABLE PRODUCTS(
 	ProductTypeID uniqueidentifier NOT NULL,
 	ProductName varchar(200) NOT NULL,
 	UnitPrice smallmoney NOT NULL,
-	IsManufactured bit NOT NULL,
+	IsManufactured bit NOT NULL DEFAULT 0,
 	CONSTRAINT PK_ProductID PRIMARY KEY(ProductID)
 );
 
