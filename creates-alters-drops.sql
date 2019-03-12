@@ -188,7 +188,7 @@ CREATE TABLE EMPLOYEES(
 	EmployeeLastName varchar(100) NOT NULL,
 	RoleID uniqueidentifier NOT NULL,
 	HireDate date NOT NULL,
-	IsCurrentlyEmployed bit NOT NULL,
+	IsCurrentlyEmployed bit NOT NULL DEFAULT 1,
 	EmployeeStreetAddress varchar(250) NOT NULL,
 	EmployeeStreetAddress2 varchar(250) NULL,
 	EmployeeCity varchar(100) NOT NULL,
