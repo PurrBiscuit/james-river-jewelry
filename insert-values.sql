@@ -455,22 +455,5 @@ INSERT INTO EMPLOYEES VALUES
 	'mvickers@jamesriverjewelry.com',
 	'1/30/18 9:25:39 AM',
 	'1/30/18 9:25:39 AM'
-),
-(
-	NewID(),
-	'Farmer',
-	'Nicholas',
-	@SalesID,
-	'6/24/2018',
-	0,
-	'1238 Southridge Crossing',
-	NULL,
-	'St Paul',
-	'MN',
-	'55102',
-	'652-532-0958',
-	'nfarmer@jamesriverjewelry.com',
-	'6/25/18 11:15:26 AM',
-	'1/3/19 12:23:39 AM'
 );
 GO
