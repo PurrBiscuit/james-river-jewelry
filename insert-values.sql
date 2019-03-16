@@ -398,3 +398,32 @@ INSERT INTO CUSTOMERS VALUES
 (@Customer8, 'Modestine', 'Burress', '9910 Division Avenue', null, 'Saint Paul', 'MN', '55127', '651-934-3925', 'mburress7@alexa.com', 0, 'f', '1950-02-01', '2016-01-13 18:39:13', '2018-09-12 16:25:39'),
 (@Customer9, 'Helge', 'Sirrell', '86 Katie Pass', null, 'Minneapolis', 'MN', '55480', '612-303-7303', 'hsirrell8@sourceforge.net', 0, 'f', '1966-02-01', '2016-09-09 12:00:45', '2017-06-21 13:57:32'),
 (@Customer10, 'Irwinn', 'Spurrier', '607 Atwood Place', null, 'Minneapolis', 'MN', '55448', '763-538-3139', 'ispurrier9@php.net', 0, 'm', '1951-02-01', '2013-02-01 19:57:58', '2015-05-02 23:59:24');
+
+INSERT INTO ACTIVE_REWARDS VALUES
+(NEWID(), @Customer1, '11/15/2018', 200, '5/15/2018'),
+(NEWID(), @Customer1, '1/19/2018', 300, '7/19/2018'),
+(NEWID(), @Customer2, '10/14/2018', 500, '5/14/2018'),
+(NEWID(), @Customer4, '9/22/2018', 1300, '3/22/2018'),
+(NEWID(), @Customer7, '9/17/2018', 1000, '3/17/2018'),
+(NEWID(), @Customer7, '2/14/2018', 600, '8/14/2018');
+
+INSERT INTO HISTORIC_REWARDS VALUES
+(NEWID(), @Customer1, '11/15/2010', 250, '1/25/2011', 0),
+(NEWID(), @Customer1, '1/15/2011', 1250, '2/15/2012', 1),
+(NEWID(), @Customer1, '5/15/2012', 2250, '1/15/2013', 0),
+(NEWID(), @Customer1, '11/15/2013', 450, '4/20/2014', 1),
+(NEWID(), @Customer2, '11/15/2012', 550, '1/15/2013', 0),
+(NEWID(), @Customer2, '5/15/2014', 600, '11/15/2014', 1),
+(NEWID(), @Customer2, '2/15/2015', 750, '3/15/2015', 1),
+(NEWID(), @Customer4, '3/15/2017', 800, '9/15/2017', 1),
+(NEWID(), @Customer4, '10/15/2013', 400, '2/15/2014', 1),
+(NEWID(), @Customer4, '8/15/2014', 550, '11/15/2014', 1),
+(NEWID(), @Customer7, '10/15/2015', 650, '11/15/2015', 0),
+(NEWID(), @Customer7, '6/15/2016', 850, '11/15/2016', 1),
+(NEWID(), @Customer7, '4/15/2017', 550, '9/15/2017', 0),
+(NEWID(), @Customer7, '3/15/2017', 350, '7/15/2017', 1),
+(NEWID(), @Customer7, '2/15/2018', 850, '11/15/2018', 0);
+GO
+
+
+
