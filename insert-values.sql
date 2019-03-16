@@ -301,4 +301,4 @@ INSERT INTO LOOKUP_COUNTRIES VALUES
 ('ZM','Zambia'),
 ('ZW','Zimbabwe');
 
-
+INSERT INTO TAX_RATES VALUES (NewID(), 'Current tax rate as of 3/15/19', '6');
