@@ -361,3 +361,40 @@ INSERT INTO MANUFACTURERS VALUES
 (NewID(), 'Mueller and Sons', '02768 Drewry Road', NULL, 'New Orleans', 'LA', '70160', '504-760-7315', 'mstangero@ucla.edu', 'Moritz Stanger', '11/5/2010 9:25:39 AM', '2/17/2015 9:25:39 AM'),
 (NewID(), 'Borer Inc', '267 Arrowood Avenue', NULL, 'Cincinnati', 'OH', '45218', '513-958-9163', 'tstrakerp@so-net.ne.jp', NULL, '8/14/2012 9:25:39 AM', '3/19/2016 9:25:39 AM');
 GO
+
+/* insert the values into the CUSTOMERS table
+together with the ACTIVE_REWARDS and HISTORIC_REWARDS tables using variables */
+
+DECLARE @Customer1 uniqueidentifier;
+DECLARE @Customer2 uniqueidentifier;
+DECLARE @Customer3 uniqueidentifier;
+DECLARE @Customer4 uniqueidentifier;
+DECLARE @Customer5 uniqueidentifier;
+DECLARE @Customer6 uniqueidentifier;
+DECLARE @Customer7 uniqueidentifier;
+DECLARE @Customer8 uniqueidentifier;
+DECLARE @Customer9 uniqueidentifier;
+DECLARE @Customer10 uniqueidentifier;
+
+SELECT @Customer1 = NewID();
+SELECT @Customer2 = NewID();
+SELECT @Customer3 = NewID();
+SELECT @Customer4 = NewID();
+SELECT @Customer5 = NewID();
+SELECT @Customer6 = NewID();
+SELECT @Customer7 = NewID();
+SELECT @Customer8 = NewID();
+SELECT @Customer9 = NewID();
+SELECT @Customer10 = NewID();
+
+INSERT INTO CUSTOMERS VALUES
+(@Customer1, 'Cari', 'Dunsford', '4951 Moland Pass', null, 'Loretto', 'MN', '55598', '763-979-1427', 'cdunsford0@amazon.de', 1, 'f', '1970-11-01', '2010-11-03 23:06:17', '2015-03-02 10:05:27'),
+(@Customer2, 'Hector', 'Pether', '8 Golf Course Junction', null, 'Saint Paul', 'MN', '55108', '651-796-7807', 'hpether1@pbs.org', 1, 'm', '1974-12-01', '2013-09-10 00:52:43', '2016-09-29 06:23:48'),
+(@Customer3, 'Jacklyn', 'Wolfer', '461 Schurz Drive', 'Apt 102C', 'Minneapolis', 'MN', '55480', '612-630-3593', 'jwolfer2@free.fr', 0, 'f', '1960-02-01', '2005-09-13 19:55:21', '2012-08-14 06:46:30'),
+(@Customer4, 'Leigha', 'Henaughan', '9 Del Sol Point', null, 'Monticello', 'MN', '55565', '763-110-6767', 'lhenaughan3@cisco.com', 1, 'f', '1960-02-01', '2010-11-25 11:55:43', '2012-07-08 05:12:02'),
+(@Customer5, 'Caril', 'Downage', '5 Talmadge Junction', null, 'Minneapolis', 'MN', '55487', '612-958-2901', 'cdownage4@technorati.com', 0, 'f', '1960-02-01', '2011-07-07 18:18:47', '2016-12-28 15:03:38'),
+(@Customer6, 'Phip', 'Quail', '835 Bultman Avenue', null, 'Saint Paul', 'MN', '55127', '612-590-2303', 'pquail5@toplist.cz', 0, 'm', '1955-02-10', '2016-02-12 02:53:50', '2018-11-11 01:09:15'),
+(@Customer7, 'Mildrid', 'Wilden', '7 Grim Way', null, 'Saint Paul', 'MN', '55146', '651-607-1019', 'mwilden6@typepad.com', 1, 'f', '1945-02-01', '2014-10-30 04:28:07', '2015-08-20 09:49:57'),
+(@Customer8, 'Modestine', 'Burress', '9910 Division Avenue', null, 'Saint Paul', 'MN', '55127', '651-934-3925', 'mburress7@alexa.com', 0, 'f', '1950-02-01', '2016-01-13 18:39:13', '2018-09-12 16:25:39'),
+(@Customer9, 'Helge', 'Sirrell', '86 Katie Pass', null, 'Minneapolis', 'MN', '55480', '612-303-7303', 'hsirrell8@sourceforge.net', 0, 'f', '1966-02-01', '2016-09-09 12:00:45', '2017-06-21 13:57:32'),
+(@Customer10, 'Irwinn', 'Spurrier', '607 Atwood Place', null, 'Minneapolis', 'MN', '55448', '763-538-3139', 'ispurrier9@php.net', 0, 'm', '1951-02-01', '2013-02-01 19:57:58', '2015-05-02 23:59:24');
