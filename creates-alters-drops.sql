@@ -1,3 +1,7 @@
+/* The order of the DROP TABLE statements matters in this file;
+this ensures that the child tables in the foreign key constraints
+are dropped before the parents tables are. */
+
 IF OBJECT_ID('dbo.TAX_RATES', 'U') IS NOT NULL
 DROP TABLE dbo.TAX_RATES;
 
