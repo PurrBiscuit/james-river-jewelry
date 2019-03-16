@@ -303,6 +303,9 @@ INSERT INTO LOOKUP_COUNTRIES VALUES
 
 INSERT INTO TAX_RATES VALUES (NewID(), 'Current tax rate as of 3/15/19', '6');
 
+/* insert the values into the LOOKUP_EMPLOYEE_ROLES table
+together with the EMPLOYEES table using variables */
+
 DECLARE @OwnerID uniqueidentifier;
 DECLARE @ManagerID uniqueidentifier;
 DECLARE @ProcurementID uniqueidentifier;
@@ -457,3 +460,5 @@ INSERT INTO EMPLOYEES VALUES
 	'1/30/18 9:25:39 AM'
 );
 GO
+
+
