@@ -302,3 +302,9 @@ INSERT INTO LOOKUP_COUNTRIES VALUES
 ('ZW','Zimbabwe');
 
 INSERT INTO TAX_RATES VALUES (NewID(), 'Current tax rate as of 3/15/19', '6');
+
+INSERT INTO LOOKUP_EMPLOYEE_ROLES VALUES
+(NewID(), 'Owner', 1),
+(NewID(), 'Manager', 1),
+(NewID(), 'Procurement', 0),
+(NewID(), 'Sales', 0);
