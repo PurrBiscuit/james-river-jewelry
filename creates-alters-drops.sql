@@ -1,3 +1,13 @@
+IF OBJECT_ID('dbo.TAX_RATES', 'U') IS NOT NULL
+DROP TABLE dbo.TAX_RATES;
+
+CREATE TABLE TAX_RATES(
+	TaxRateID 				uniqueidentifier 	NOT NULL,
+	TaxRateDescription 		varchar(100) 		NOT NULL,
+	TaxRatePercentage 		tinyint 			NOT NULL,
+	CONSTRAINT PK_TaxRateID PRIMARY KEY(TaxRateID)
+);
+
 IF OBJECT_ID('dbo.ACTIVE_REWARDS', 'U') IS NOT NULL
 DROP TABLE dbo.ACTIVE_REWARDS;
 
@@ -23,53 +33,6 @@ CREATE TABLE HISTORIC_REWARDS(
 	CONSTRAINT PK_HistoricRewardID PRIMARY KEY(HistoricRewardID)
 );
 
-IF OBJECT_ID('dbo.LOOKUP_STATES', 'U') IS NOT NULL
-DROP TABLE dbo.LOOKUP_STATES;
-
-CREATE TABLE LOOKUP_STATES(
-	State 		varchar(2) 	NOT NULL,
-	StateName 	varchar(30) NOT NULL,
-	CONSTRAINT PK_State PRIMARY KEY(State)
-);
-
-IF OBJECT_ID('dbo.CUSTOMERS', 'U') IS NOT NULL
-DROP TABLE dbo.CUSTOMERS;
-
-CREATE TABLE CUSTOMERS(
-	CustomerID 					uniqueidentifier 	NOT NULL,
-	CustomerFirstName 			varchar(100) 		NOT NULL,
-	CustomerLastName 			varchar(100) 		NOT NULL,
-	CustomerStreetAddress 		varchar(250) 		NULL,
-	CustomerStreetAddress2 		varchar(250) 		NULL,
-	CustomerCity 				varchar(100) 		NULL,
-	CustomerState 				varchar(2) 			NULL,
-	CustomerZip 				varchar(10) 		NULL,
-	CustomerPhone 				varchar(12) 		NULL,
-	CustomerEmail 				varchar(80) 		NOT NULL,
-	IsEmailVerified 			bit 				NOT NULL 	DEFAULT 0,
-	Gender 						varchar(1) 			NULL,
-	BirthDate 					date 				NULL,
-	CustomerDateCreated 		datetime 			NOT NULL,
-	CustomerDateLastModified 	datetime 			NOT NULL,
-	CONSTRAINT PK_CustomerID PRIMARY KEY(CustomerID)
-);
-
-IF OBJECT_ID('dbo.ORDERS', 'U') IS NOT NULL
-DROP TABLE dbo.ORDERS;
-
-CREATE TABLE ORDERS(
-	OrderID 		uniqueidentifier 	NOT NULL,
-	CustomerID 		uniqueidentifier 	NOT NULL,
-	EmployeeID 		uniqueidentifier 	NOT NULL,
-	InvoiceNumber 	int 				NOT NULL,
-	OrderDate 		datetime 			NOT NULL,
-	PreTaxTotal 	smallmoney 			NOT NULL,
-	TaxAmount 		smallmoney 			NOT NULL,
-	OrderTotal 		smallmoney 			NOT NULL,
-	CONSTRAINT PK_OrderID PRIMARY KEY(OrderID),
-	CONSTRAINT AK_InvoiceNumber UNIQUE(InvoiceNumber)
-);
-
 IF OBJECT_ID('dbo.CUSTOMER_PREFERENCES', 'U') IS NOT NULL
 DROP TABLE dbo.CUSTOMER_PREFERENCES;
 
@@ -80,47 +43,6 @@ CREATE TABLE CUSTOMER_PREFERENCES(
 	Artisan 			bit 				NOT NULL 	DEFAULT 1,
 	Manufactured 		bit 				NOT NULL 	DEFAULT 0,
 	CONSTRAINT PK_CustomerPreferences PRIMARY KEY(CustomerID,ProductTypeID)
-);
-
-IF OBJECT_ID('dbo.PRODUCT_TYPES', 'U') IS NOT NULL
-DROP TABLE dbo.PRODUCT_TYPES;
-
-CREATE TABLE PRODUCT_TYPES(
-	ProductTypeID 		uniqueidentifier 	NOT NULL,
-	ProductTypeName 	varchar(100) 		NOT NULL,
-	CONSTRAINT PK_ProductTypeID PRIMARY KEY(ProductTypeID)
-);
-
-IF OBJECT_ID('dbo.ARTISTS', 'U') IS NOT NULL
-DROP TABLE dbo.ARTISTS;
-
-CREATE TABLE ARTISTS(
-	ArtistID uniqueidentifier NOT NULL,
-	ArtistFirstName 		varchar(100) 	NOT NULL,
-	ArtistLastName 			varchar(100) 	NOT NULL,
-	ArtistStreetAddress 	varchar(250) 	NOT NULL,
-	ArtistStreetAddress2 	varchar(250) 	NULL,
-	ArtistStreetAddress3 	varchar(250) 	NULL,
-	ArtistCity 				varchar(100) 	NOT NULL,
-	Region 					varchar(80) 	NULL,
-	PostalCode 				varchar(50) 	NOT NULL,
-	County 					varchar(80) 	NULL,
-	Country 				varchar(2) 		NOT NULL,
-	ArtistPhone 			varchar(25) 	NULL,
-	ArtistEmail 			varchar(80) 	NOT NULL,
-	BaseCommission 			tinyint 		NOT NULL 	DEFAULT 60,
-	ArtistDateCreated 		datetime 		NOT NULL,
-	ArtistDateLastModified 	datetime 		NOT NULL,
-	CONSTRAINT PK_ArtistID PRIMARY KEY(ArtistID)
-);
-
-IF OBJECT_ID('dbo.LOOKUP_COUNTRIES', 'U') IS NOT NULL
-DROP TABLE dbo.LOOKUP_COUNTRIES;
-
-CREATE TABLE LOOKUP_COUNTRIES(
-	Country 		varchar(2) 		NOT NULL,
-	CountryName 	varchar(100) 	NOT NULL,
-	CONSTRAINT PK_Country PRIMARY KEY(Country)
 );
 
 IF OBJECT_ID('dbo.ARTIST_COMMISSION_HISTORY', 'U') IS NOT NULL
@@ -147,16 +69,57 @@ CREATE TABLE ORDER_DETAILS(
 	CONSTRAINT PK_OrderDetails PRIMARY KEY(ProductID,OrderID)
 );
 
-IF OBJECT_ID('dbo.PRODUCTS', 'U') IS NOT NULL
-DROP TABLE dbo.PRODUCTS;
+IF OBJECT_ID('dbo.ORDERS', 'U') IS NOT NULL
+DROP TABLE dbo.ORDERS;
 
-CREATE TABLE PRODUCTS(
-	ProductID 			uniqueidentifier 	NOT NULL,
-	ProductTypeID 		uniqueidentifier 	NOT NULL,
-	ProductName 		varchar(200) 		NOT NULL,
-	UnitPrice 			smallmoney 			NOT NULL,
-	IsManufactured 		bit 				NOT NULL 	DEFAULT 0,
-	CONSTRAINT PK_ProductID PRIMARY KEY(ProductID)
+CREATE TABLE ORDERS(
+	OrderID 		uniqueidentifier 	NOT NULL,
+	CustomerID 		uniqueidentifier 	NOT NULL,
+	EmployeeID 		uniqueidentifier 	NOT NULL,
+	InvoiceNumber 	int 				NOT NULL,
+	OrderDate 		datetime 			NOT NULL,
+	PreTaxTotal 	smallmoney 			NOT NULL,
+	TaxAmount 		smallmoney 			NOT NULL,
+	OrderTotal 		smallmoney 			NOT NULL,
+	CONSTRAINT PK_OrderID PRIMARY KEY(OrderID),
+	CONSTRAINT AK_InvoiceNumber UNIQUE(InvoiceNumber)
+);
+
+IF OBJECT_ID('dbo.MANUFACTURED_PURCHASE_HISTORY', 'U') IS NOT NULL
+DROP TABLE dbo.MANUFACTURED_PURCHASE_HISTORY;
+
+CREATE TABLE MANUFACTURED_PURCHASE_HISTORY(
+	ManufacturedPurchaseHistoryID 				uniqueidentifier 	NOT NULL,
+	ProductID 									uniqueidentifier 	NOT NULL,
+	ManufacturedPurchaseHistoryDatePurchased 	datetime 			NOT NULL,
+	ManufacturedPurchaseHistoryQuantity 		smallint 			NOT NULL,
+	ManufacturedPurchaseHistoryPurchasePrice 	smallmoney 			NOT NULL,
+	ManufacturedPurchaseHistoryDateReceived 	datetime 			NULL,
+	CONSTRAINT PK_ManufacturedPurchaseHistoryID PRIMARY KEY(ManufacturedPurchaseHistoryID)
+);
+
+IF OBJECT_ID('dbo.ARTISAN_PRODUCTS_COMMISSION_HISTORY', 'U') IS NOT NULL
+DROP TABLE dbo.ARTISAN_PRODUCTS_COMMISSION_HISTORY;
+
+CREATE TABLE ARTISAN_PRODUCTS_COMMISSION_HISTORY(
+	ArtisanProductsCommissionHistoryID 				uniqueidentifier 	NOT NULL,
+	ProductID 										uniqueidentifier 	NOT NULL,
+	ArtisanProductsCommissionHistoryCommission 		tinyint 			NOT NULL,
+	ArtisanProductsCommissionHistoryDateModified 	datetime 			NOT NULL,
+	ArtisanProductsCommissionHistoryComments 		varchar(500) 		NULL,
+	CONSTRAINT PK_ArtisanProductsCommissionHistoryID PRIMARY KEY(ArtisanProductsCommissionHistoryID)
+);
+
+IF OBJECT_ID('dbo.PRODUCT_PRICE_HISTORY', 'U') IS NOT NULL
+DROP TABLE dbo.PRODUCT_PRICE_HISTORY;
+
+CREATE TABLE PRODUCT_PRICE_HISTORY(
+	ProductPriceHistoryID 				uniqueidentifier 	NOT NULL,
+	ProductID 							uniqueidentifier 	NOT NULL,
+	ProductPriceHistoryUnitPrice 		smallmoney 			NOT NULL,
+	ProductPriceHistoryDateModified 	datetime 			NOT NULL,
+	ProductPriceHistoryComments 		varchar(500) 		NULL,
+	CONSTRAINT PK_ProductPriceHistory PRIMARY KEY(ProductPriceHistoryID)
 );
 
 IF OBJECT_ID('dbo.ARTISAN_PRODUCTS', 'U') IS NOT NULL
@@ -183,16 +146,89 @@ CREATE TABLE MANUFACTURED_PRODUCTS(
 	CONSTRAINT PK_ManufacturedProductID PRIMARY KEY(ProductID)
 );
 
-IF OBJECT_ID('dbo.PRODUCT_PRICE_HISTORY', 'U') IS NOT NULL
-DROP TABLE dbo.PRODUCT_PRICE_HISTORY;
+IF OBJECT_ID('dbo.PRODUCTS', 'U') IS NOT NULL
+DROP TABLE dbo.PRODUCTS;
 
-CREATE TABLE PRODUCT_PRICE_HISTORY(
-	ProductPriceHistoryID 				uniqueidentifier 	NOT NULL,
-	ProductID 							uniqueidentifier 	NOT NULL,
-	ProductPriceHistoryUnitPrice 		smallmoney 			NOT NULL,
-	ProductPriceHistoryDateModified 	datetime 			NOT NULL,
-	ProductPriceHistoryComments 		varchar(500) 		NULL,
-	CONSTRAINT PK_ProductPriceHistory PRIMARY KEY(ProductPriceHistoryID)
+CREATE TABLE PRODUCTS(
+	ProductID 			uniqueidentifier 	NOT NULL,
+	ProductTypeID 		uniqueidentifier 	NOT NULL,
+	ProductName 		varchar(200) 		NOT NULL,
+	UnitPrice 			smallmoney 			NOT NULL,
+	IsManufactured 		bit 				NOT NULL 	DEFAULT 0,
+	CONSTRAINT PK_ProductID PRIMARY KEY(ProductID)
+);
+
+IF OBJECT_ID('dbo.PRODUCT_TYPES', 'U') IS NOT NULL
+DROP TABLE dbo.PRODUCT_TYPES;
+
+CREATE TABLE PRODUCT_TYPES(
+	ProductTypeID 		uniqueidentifier 	NOT NULL,
+	ProductTypeName 	varchar(100) 		NOT NULL,
+	CONSTRAINT PK_ProductTypeID PRIMARY KEY(ProductTypeID)
+);
+
+IF OBJECT_ID('dbo.CUSTOMERS', 'U') IS NOT NULL
+DROP TABLE dbo.CUSTOMERS;
+
+CREATE TABLE CUSTOMERS(
+	CustomerID 					uniqueidentifier 	NOT NULL,
+	CustomerFirstName 			varchar(100) 		NOT NULL,
+	CustomerLastName 			varchar(100) 		NOT NULL,
+	CustomerStreetAddress 		varchar(250) 		NULL,
+	CustomerStreetAddress2 		varchar(250) 		NULL,
+	CustomerCity 				varchar(100) 		NULL,
+	CustomerState 				varchar(2) 			NULL,
+	CustomerZip 				varchar(10) 		NULL,
+	CustomerPhone 				varchar(12) 		NULL,
+	CustomerEmail 				varchar(80) 		NOT NULL,
+	IsEmailVerified 			bit 				NOT NULL 	DEFAULT 0,
+	Gender 						varchar(1) 			NULL,
+	BirthDate 					date 				NULL,
+	CustomerDateCreated 		datetime 			NOT NULL,
+	CustomerDateLastModified 	datetime 			NOT NULL,
+	CONSTRAINT PK_CustomerID PRIMARY KEY(CustomerID)
+);
+
+IF OBJECT_ID('dbo.ARTISTS', 'U') IS NOT NULL
+DROP TABLE dbo.ARTISTS;
+
+CREATE TABLE ARTISTS(
+	ArtistID uniqueidentifier NOT NULL,
+	ArtistFirstName 		varchar(100) 	NOT NULL,
+	ArtistLastName 			varchar(100) 	NOT NULL,
+	ArtistStreetAddress 	varchar(250) 	NOT NULL,
+	ArtistStreetAddress2 	varchar(250) 	NULL,
+	ArtistStreetAddress3 	varchar(250) 	NULL,
+	ArtistCity 				varchar(100) 	NOT NULL,
+	Region 					varchar(80) 	NULL,
+	PostalCode 				varchar(50) 	NOT NULL,
+	County 					varchar(80) 	NULL,
+	Country 				varchar(2) 		NOT NULL,
+	ArtistPhone 			varchar(25) 	NULL,
+	ArtistEmail 			varchar(80) 	NOT NULL,
+	BaseCommission 			tinyint 		NOT NULL 	DEFAULT 60,
+	ArtistDateCreated 		datetime 		NOT NULL,
+	ArtistDateLastModified 	datetime 		NOT NULL,
+	CONSTRAINT PK_ArtistID PRIMARY KEY(ArtistID)
+);
+
+IF OBJECT_ID('dbo.MANUFACTURERS', 'U') IS NOT NULL
+DROP TABLE dbo.MANUFACTURERS;
+
+CREATE TABLE MANUFACTURERS(
+	ManufacturerID 					uniqueidentifier 	NOT NULL,
+	ManufacturerName 				varchar(200) 		NOT NULL,
+	ManufacturerStreetAddress 		varchar(250) 		NOT NULL,
+	ManufacturerStreetAddress2 		varchar(250) 		NULL,
+	ManufacturerCity 				varchar(100) 		NOT NULL,
+	ManufacturerState 				varchar(2) 			NOT NULL,
+	ManufacturerZip 				varchar(10) 		NOT NULL,
+	ManufacturerPhone 				varchar(12) 		NOT NULL,
+	ManufacturerEmail 				varchar(80) 		NOT NULL,
+	ContactName 					varchar(100) 		NULL,
+	ManufacturerDateCreated 		datetime 			NOT NULL,
+	ManufacturerDateLastModified 	datetime 			NOT NULL,
+	CONSTRAINT PK_ManufacturerID PRIMARY KEY(ManufacturerID)
 );
 
 IF OBJECT_ID('dbo.EMPLOYEES', 'U') IS NOT NULL
@@ -217,6 +253,24 @@ CREATE TABLE EMPLOYEES(
 	CONSTRAINT PK_EmployeeID PRIMARY KEY(EmployeeID)
 );
 
+IF OBJECT_ID('dbo.LOOKUP_STATES', 'U') IS NOT NULL
+DROP TABLE dbo.LOOKUP_STATES;
+
+CREATE TABLE LOOKUP_STATES(
+	State 		varchar(2) 	NOT NULL,
+	StateName 	varchar(30) NOT NULL,
+	CONSTRAINT PK_State PRIMARY KEY(State)
+);
+
+IF OBJECT_ID('dbo.LOOKUP_COUNTRIES', 'U') IS NOT NULL
+DROP TABLE dbo.LOOKUP_COUNTRIES;
+
+CREATE TABLE LOOKUP_COUNTRIES(
+	Country 		varchar(2) 		NOT NULL,
+	CountryName 	varchar(100) 	NOT NULL,
+	CONSTRAINT PK_Country PRIMARY KEY(Country)
+);
+
 IF OBJECT_ID('dbo.LOOKUP_EMPLOYEE_ROLES', 'U') IS NOT NULL
 DROP TABLE dbo.LOOKUP_EMPLOYEE_ROLES;
 
@@ -225,60 +279,6 @@ CREATE TABLE LOOKUP_EMPLOYEE_ROLES(
 	RoleName 	varchar(50) 		NOT NULL,
 	IsAdmin 	bit 				NOT NULL 	DEFAULT 0,
 	CONSTRAINT PK_EmployeeRoleID PRIMARY KEY(RoleID)
-);
-
-IF OBJECT_ID('dbo.MANUFACTURERS', 'U') IS NOT NULL
-DROP TABLE dbo.MANUFACTURERS;
-
-CREATE TABLE MANUFACTURERS(
-	ManufacturerID 					uniqueidentifier 	NOT NULL,
-	ManufacturerName 				varchar(200) 		NOT NULL,
-	ManufacturerStreetAddress 		varchar(250) 		NOT NULL,
-	ManufacturerStreetAddress2 		varchar(250) 		NULL,
-	ManufacturerCity 				varchar(100) 		NOT NULL,
-	ManufacturerState 				varchar(2) 			NOT NULL,
-	ManufacturerZip 				varchar(10) 		NOT NULL,
-	ManufacturerPhone 				varchar(12) 		NOT NULL,
-	ManufacturerEmail 				varchar(80) 		NOT NULL,
-	ContactName 					varchar(100) 		NULL,
-	ManufacturerDateCreated 		datetime 			NOT NULL,
-	ManufacturerDateLastModified 	datetime 			NOT NULL,
-	CONSTRAINT PK_ManufacturerID PRIMARY KEY(ManufacturerID)
-);
-
-IF OBJECT_ID('dbo.TAX_RATES', 'U') IS NOT NULL
-DROP TABLE dbo.TAX_RATES;
-
-CREATE TABLE TAX_RATES(
-	TaxRateID 				uniqueidentifier 	NOT NULL,
-	TaxRateDescription 		varchar(100) 		NOT NULL,
-	TaxRatePercentage 		tinyint 			NOT NULL,
-	CONSTRAINT PK_TaxRateID PRIMARY KEY(TaxRateID)
-);
-
-IF OBJECT_ID('dbo.MANUFACTURED_PURCHASE_HISTORY', 'U') IS NOT NULL
-DROP TABLE dbo.MANUFACTURED_PURCHASE_HISTORY;
-
-CREATE TABLE MANUFACTURED_PURCHASE_HISTORY(
-	ManufacturedPurchaseHistoryID 				uniqueidentifier 	NOT NULL,
-	ProductID 									uniqueidentifier 	NOT NULL,
-	ManufacturedPurchaseHistoryDatePurchased 	datetime 			NOT NULL,
-	ManufacturedPurchaseHistoryQuantity 		smallint 			NOT NULL,
-	ManufacturedPurchaseHistoryPurchasePrice 	smallmoney 			NOT NULL,
-	ManufacturedPurchaseHistoryDateReceived 	datetime 			NULL,
-	CONSTRAINT PK_ManufacturedPurchaseHistoryID PRIMARY KEY(ManufacturedPurchaseHistoryID)
-);
-
-IF OBJECT_ID('dbo.ARTISAN_PRODUCTS_COMMISSION_HISTORY', 'U') IS NOT NULL
-DROP TABLE dbo.ARTISAN_PRODUCTS_COMMISSION_HISTORY;
-
-CREATE TABLE ARTISAN_PRODUCTS_COMMISSION_HISTORY(
-	ArtisanProductsCommissionHistoryID 				uniqueidentifier 	NOT NULL,
-	ProductID 										uniqueidentifier 	NOT NULL,
-	ArtisanProductsCommissionHistoryCommission 		tinyint 			NOT NULL,
-	ArtisanProductsCommissionHistoryDateModified 	datetime 			NOT NULL,
-	ArtisanProductsCommissionHistoryComments 		varchar(500) 		NULL,
-	CONSTRAINT PK_ArtisanProductsCommissionHistoryID PRIMARY KEY(ArtisanProductsCommissionHistoryID)
 );
 
 ALTER TABLE ACTIVE_REWARDS
