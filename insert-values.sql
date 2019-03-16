@@ -303,8 +303,174 @@ INSERT INTO LOOKUP_COUNTRIES VALUES
 
 INSERT INTO TAX_RATES VALUES (NewID(), 'Current tax rate as of 3/15/19', '6');
 
+DECLARE @OwnerID uniqueidentifier;
+DECLARE @ManagerID uniqueidentifier;
+DECLARE @ProcurementID uniqueidentifier;
+DECLARE @SalesID uniqueidentifier;
+
+SELECT @OwnerID = NewID();
+SELECT @ManagerID = NewID();
+SELECT @ProcurementID = NewID();
+SELECT @SalesID = NewID();
+
 INSERT INTO LOOKUP_EMPLOYEE_ROLES VALUES
-(NewID(), 'Owner', 1),
-(NewID(), 'Manager', 1),
-(NewID(), 'Procurement', 0),
-(NewID(), 'Sales', 0);
+(@OwnerID, 'Owner', 1),
+(@ManagerID, 'Manager', 1),
+(@ProcurementID, 'Procurement', 0),
+(@SalesID, 'Sales', 0);
+
+INSERT INTO EMPLOYEES VALUES
+(
+	NewID(),
+	'Ronald',
+	'Jacobs',
+	@OwnerID,
+	'2/10/2005',
+	1,
+	'68853 Bultman Hill',
+	NULL,
+	'St Paul',
+	'MN',
+	'55102',
+	'652-332-1405',
+	'rjacobs@jamesriverjewelry.com',
+	'1/30/18 9:25:32 AM',
+	'2/15/18 1:38:54 PM'
+),
+(
+	NewID(),
+	'Deborah',
+	'Jacobs',
+	@OwnerID,
+	'2/10/2005',
+	1,
+	'68853 Bultman Hill',
+	NULL,
+	'St Paul',
+	'MN',
+	'55102',
+	'652-332-1507',
+	'djacobs@jamesriverjewelry.com',
+	'1/30/18 9:25:33 AM',
+	'4/22/18 2:15:54 PM'
+),
+(
+	NewID(),
+	'Martin',
+	'Jacobs',
+	@ManagerID,
+	'2/14/2005',
+	1,
+	'444 Elka Center',
+	NULL,
+	'St Paul',
+	'MN',
+	'55102',
+	'652-342-5039',
+	'mjacobs@jamesriverjewelry.com',
+	'1/30/18 9:25:34 AM',
+	'1/30/18 9:25:34 AM'
+),
+(
+	NewID(),
+	'Thompson',
+	'Scott',
+	@ManagerID,
+	'2/14/2005',
+	1,
+	'2 Sutteridge Road',
+	'Apt 205B',
+	'St Paul',
+	'MN',
+	'55103',
+	'652-209-3921',
+	'sthompson@jamesriverjewelry.com',
+	'1/30/18 9:25:35 AM',
+	'1/30/18 9:25:35 AM'
+),
+(
+	NewID(),
+	'Schuster',
+	'Terry',
+	@ProcurementID,
+	'2/20/2005',
+	1,
+	'9125 Shelley Road',
+	NULL,
+	'St Paul',
+	'MN',
+	'55103',
+	'652-845-0923',
+	'tschuster@jamesriverjewelry.com',
+	'1/30/18 9:25:36 AM',
+	'1/30/18 9:25:36 AM'
+),
+(
+	NewID(),
+	'Evans',
+	'Michael',
+	@SalesID,
+	'2/24/2005',
+	1,
+	'9125 Shelley Road',
+	NULL,
+	'St Paul',
+	'MN',
+	'55103',
+	'652-845-0923',
+	'mevans@jamesriverjewelry.com',
+	'1/30/18 9:25:37 AM',
+	'1/30/18 9:25:37 AM'
+),
+(
+	NewID(),
+	'Banks',
+	'Holly',
+	@SalesID,
+	'5/12/2007',
+	1,
+	'19460 Waywood Road',
+	NULL,
+	'St Paul',
+	'MN',
+	'55103',
+	'652-845-0923',
+	'hbanks@jamesriverjewelry.com',
+	'1/30/18 9:25:38 AM',
+	'3/19/18 2:18:48 PM'
+),
+(
+	NewID(),
+	'Vickers',
+	'Martha',
+	@SalesID,
+	'8/11/2010',
+	1,
+	'6157 Norway Maple Alley',
+	NULL,
+	'St Paul',
+	'MN',
+	'55103',
+	'652-530-3294',
+	'mvickers@jamesriverjewelry.com',
+	'1/30/18 9:25:39 AM',
+	'1/30/18 9:25:39 AM'
+),
+(
+	NewID(),
+	'Farmer',
+	'Nicholas',
+	@SalesID,
+	'6/24/2018',
+	0,
+	'1238 Southridge Crossing',
+	NULL,
+	'St Paul',
+	'MN',
+	'55102',
+	'652-532-0958',
+	'nfarmer@jamesriverjewelry.com',
+	'6/25/18 11:15:26 AM',
+	'1/3/19 12:23:39 AM'
+);
+GO
