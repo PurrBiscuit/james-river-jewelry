@@ -463,6 +463,131 @@ INSERT INTO PRODUCT_TYPES VALUES
 (@ProductType19, 'Pendants'),
 (@ProductType20, 'Anklets');
 
+DECLARE @ArtisanProduct1 uniqueidentifier;
+DECLARE @ArtisanProduct2 uniqueidentifier;
+DECLARE @ArtisanProduct3 uniqueidentifier;
+DECLARE @ArtisanProduct4 uniqueidentifier;
+DECLARE @ArtisanProduct5 uniqueidentifier;
+DECLARE @ArtisanProduct6 uniqueidentifier;
+DECLARE @ArtisanProduct7 uniqueidentifier;
+DECLARE @ArtisanProduct8 uniqueidentifier;
+DECLARE @ArtisanProduct9 uniqueidentifier;
+DECLARE @ArtisanProduct10 uniqueidentifier;
+DECLARE @ArtisanProduct11 uniqueidentifier;
+DECLARE @ArtisanProduct12 uniqueidentifier;
+DECLARE @ArtisanProduct13 uniqueidentifier;
+DECLARE @ArtisanProduct14 uniqueidentifier;
+DECLARE @ArtisanProduct15 uniqueidentifier;
+DECLARE @ArtisanProduct16 uniqueidentifier;
+DECLARE @ArtisanProduct17 uniqueidentifier;
+DECLARE @ArtisanProduct18 uniqueidentifier;
+DECLARE @ArtisanProduct19 uniqueidentifier;
+DECLARE @ArtisanProduct20 uniqueidentifier;
+DECLARE @ManufacturedProduct1 uniqueidentifier;
+DECLARE @ManufacturedProduct2 uniqueidentifier;
+DECLARE @ManufacturedProduct3 uniqueidentifier;
+DECLARE @ManufacturedProduct4 uniqueidentifier;
+DECLARE @ManufacturedProduct5 uniqueidentifier;
+DECLARE @ManufacturedProduct6 uniqueidentifier;
+DECLARE @ManufacturedProduct7 uniqueidentifier;
+DECLARE @ManufacturedProduct8 uniqueidentifier;
+DECLARE @ManufacturedProduct9 uniqueidentifier;
+DECLARE @ManufacturedProduct10 uniqueidentifier;
+DECLARE @ManufacturedProduct11 uniqueidentifier;
+DECLARE @ManufacturedProduct12 uniqueidentifier;
+DECLARE @ManufacturedProduct13 uniqueidentifier;
+DECLARE @ManufacturedProduct14 uniqueidentifier;
+DECLARE @ManufacturedProduct15 uniqueidentifier;
+DECLARE @ManufacturedProduct16 uniqueidentifier;
+DECLARE @ManufacturedProduct17 uniqueidentifier;
+DECLARE @ManufacturedProduct18 uniqueidentifier;
+DECLARE @ManufacturedProduct19 uniqueidentifier;
+DECLARE @ManufacturedProduct20 uniqueidentifier;
+
+SELECT @ArtisanProduct1 = NewID();
+SELECT @ArtisanProduct2 = NewID();
+SELECT @ArtisanProduct3 = NewID();
+SELECT @ArtisanProduct4 = NewID();
+SELECT @ArtisanProduct5 = NewID();
+SELECT @ArtisanProduct6 = NewID();
+SELECT @ArtisanProduct7 = NewID();
+SELECT @ArtisanProduct8 = NewID();
+SELECT @ArtisanProduct9 = NewID();
+SELECT @ArtisanProduct10 = NewID();
+SELECT @ArtisanProduct11 = NewID();
+SELECT @ArtisanProduct12 = NewID();
+SELECT @ArtisanProduct13 = NewID();
+SELECT @ArtisanProduct14 = NewID();
+SELECT @ArtisanProduct15 = NewID();
+SELECT @ArtisanProduct16 = NewID();
+SELECT @ArtisanProduct17 = NewID();
+SELECT @ArtisanProduct18 = NewID();
+SELECT @ArtisanProduct19 = NewID();
+SELECT @ArtisanProduct20 = NewID();
+SELECT @ManufacturedProduct1 = NewID();
+SELECT @ManufacturedProduct2 = NewID();
+SELECT @ManufacturedProduct3 = NewID();
+SELECT @ManufacturedProduct4 = NewID();
+SELECT @ManufacturedProduct5 = NewID();
+SELECT @ManufacturedProduct6 = NewID();
+SELECT @ManufacturedProduct7 = NewID();
+SELECT @ManufacturedProduct8 = NewID();
+SELECT @ManufacturedProduct9 = NewID();
+SELECT @ManufacturedProduct10 = NewID();
+SELECT @ManufacturedProduct11 = NewID();
+SELECT @ManufacturedProduct12 = NewID();
+SELECT @ManufacturedProduct13 = NewID();
+SELECT @ManufacturedProduct14 = NewID();
+SELECT @ManufacturedProduct15 = NewID();
+SELECT @ManufacturedProduct16 = NewID();
+SELECT @ManufacturedProduct17 = NewID();
+SELECT @ManufacturedProduct18 = NewID();
+SELECT @ManufacturedProduct19 = NewID();
+SELECT @ManufacturedProduct20 = NewID();
+
+INSERT INTO PRODUCTS VALUES
+(@ArtisanProduct1, @ProductType1, 'ArtisanProduct1 - Size 5, Mens', 100.00, 0),
+(@ArtisanProduct2, @ProductType11, 'ArtisanProduct2 - Size 4, Womens', 250.00, 0),
+(@ArtisanProduct3, @ProductType12, 'ArtisanProduct3 - Size 10, Womens', 475.00, 0),
+(@ArtisanProduct4, @ProductType13, 'ArtisanProduct4 - Size 6, Mens', 255.00, 0),
+(@ArtisanProduct5, @ProductType2, 'ArtisanProduct5 - Size 10, Mens', 320.00, 0),
+(@ArtisanProduct6, @ProductType2, 'ArtisanProduct6 - Size 4, Womens', 400.00, 0),
+(@ArtisanProduct7, @ProductType3, 'ArtisanProduct7 - Size 10, Womens', 2100.00, 0),
+(@ArtisanProduct8, @ProductType4, 'ArtisanProduct8 - Size 3, Womens', 670.00, 0),
+(@ArtisanProduct9, @ProductType4, 'ArtisanProduct9 - Size 10, Womens', 480.00, 0),
+(@ArtisanProduct10 @ProductType10, 'ArtisanProduct10 - Size 10, Womens', 1100.00, 0),
+(@ArtisanProduct11 @ProductType11, 'ArtisanProduct11 - Size 3, Womens', 2200.00, 0),
+(@ArtisanProduct12 @ProductType19, 'ArtisanProduct12 - Size 4, Mens', 2700.00, 0),
+(@ArtisanProduct13 @ProductType20, 'ArtisanProduct13 - Size 5, Mens', 3000.00, 0),
+(@ArtisanProduct14 @ProductType12, 'ArtisanProduct14 - Size 6, Mens', 860.00, 0),
+(@ArtisanProduct15 @ProductType8, 'ArtisanProduct15 - Size 8, Womens', 540.00, 0),
+(@ArtisanProduct16 @ProductType9, 'ArtisanProduct16 - Size 14, Womens', 330.00, 0),
+(@ArtisanProduct17 @ProductType4, 'ArtisanProduct17 - Size 11, Mens', 850.00, 0),
+(@ArtisanProduct18 @ProductType5, 'ArtisanProduct18 - Size 8, Mens', 1400.00, 0),
+(@ArtisanProduct19 @ProductType6, 'ArtisanProduct19 - Size 5, Womens', 900.00, 0),
+(@ArtisanProduct20 @ProductType6, 'ArtisanProduct20 - Size 3, Mens', 1000.00, 0),
+(@ManufacturedProduct1, @ProductType9, 'ManufacturedProduct1 - Size 5, Mens', 400.00, 1),
+(@ManufacturedProduct2, @ProductType19, 'ManufacturedProduct2 - Size 4, Womens', 2200.00, 1),
+(@ManufacturedProduct3, @ProductType3, 'ManufacturedProduct3 - Size 10, Womens', 250.00, 1),
+(@ManufacturedProduct4, @ProductType10, 'ManufacturedProduct4 - Size 6, Mens', 1200.00, 1),
+(@ManufacturedProduct5, @ProductType9, 'ManufacturedProduct5 - Size 10, Mens', 3200.00, 1),
+(@ManufacturedProduct6, @ProductType2, 'ManufacturedProduct6 - Size 4, Womens', 250.00, 1),
+(@ManufacturedProduct7, @ProductType3, 'ManufacturedProduct7 - Size 10, Womens', 1000.00, 1),
+(@ManufacturedProduct8, @ProductType6, 'ManufacturedProduct8 - Size 3, Womens', 400.00, 1),
+(@ManufacturedProduct9, @ProductType4, 'ManufacturedProduct9 - Size 10, Womens', 600.00, 1),
+(@ManufacturedProduct10 @ProductType12, 'ManufacturedProduct10 - Size 10, Womens', 900.00, 1),
+(@ManufacturedProduct11 @ProductType11, 'ManufacturedProduct11 - Size 3, Womens', 400.00, 1),
+(@ManufacturedProduct12 @ProductType20, 'ManufacturedProduct12 - Size 4, Mens', 350.00, 1),
+(@ManufacturedProduct13 @ProductType6, 'ManufacturedProduct13 - Size 5, Mens', 250.00, 1),
+(@ManufacturedProduct14 @ProductType18, 'ManufacturedProduct14 - Size 6, Mens', 950.00, 1),
+(@ManufacturedProduct15 @ProductType8, 'ManufacturedProduct15 - Size 8, Womens', 400.00, 1),
+(@ManufacturedProduct16 @ProductType7, 'ManufacturedProduct16 - Size 14, Womens', 200.00, 1),
+(@ManufacturedProduct17 @ProductType18, 'ManufacturedProduct17 - Size 11, Mens', 650.00, 1),
+(@ManufacturedProduct18 @ProductType5, 'ManufacturedProduct18 - Size 8, Mens', 300.00, 1),
+(@ManufacturedProduct19 @ProductType13, 'ManufacturedProduct19 - Size 5, Womens', 500.00, 1),
+(@ManufacturedProduct20 @ProductType14, 'ManufacturedProduct20 - Size 3, Mens', 300.00, 1);
+
+
 DECLARE @Customer1 uniqueidentifier;
 DECLARE @Customer2 uniqueidentifier;
 DECLARE @Customer3 uniqueidentifier;
