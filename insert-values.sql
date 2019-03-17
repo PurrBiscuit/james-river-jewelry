@@ -303,28 +303,6 @@ INSERT INTO LOOKUP_COUNTRIES VALUES
 
 INSERT INTO TAX_RATES VALUES (NewID(), 'Current tax rate as of 3/15/19', '6');
 
-INSERT INTO PRODUCT_TYPES VALUES
-(NewID(), 'Gold Necklace'),
-(NewID(), 'Mens Watch'),
-(NewID(), 'Gold Ring'),
-(NewID(), 'Gold Earrings'),
-(NewID(), 'Gold Bracelet'),
-(NewID(), 'Gold Cuff Links'),
-(NewID(), 'Gold Brooch'),
-(NewID(), 'Gold Crown'),
-(NewID(), 'Gold Special Order'),
-(NewID(), 'Silver Necklace'),
-(NewID(), 'Womens Watch'),
-(NewID(), 'Silver Ring'),
-(NewID(), 'Silver Earrings'),
-(NewID(), 'Silver Bracelet'),
-(NewID(), 'Silver Cuff Links'),
-(NewID(), 'Silver Brooch'),
-(NewID(), 'Silver Crown'),
-(NewID(), 'Silver Special Order'),
-(NewID(), 'Pendants'),
-(NewID(), 'Anklets');
-
 /* insert the values into the LOOKUP_EMPLOYEE_ROLES table
 together with the EMPLOYEES table using variables */
 
@@ -397,6 +375,26 @@ DECLARE @Customer7 uniqueidentifier;
 DECLARE @Customer8 uniqueidentifier;
 DECLARE @Customer9 uniqueidentifier;
 DECLARE @Customer10 uniqueidentifier;
+DECLARE @ProductType1 uniqueidentifier;
+DECLARE @ProductType2 uniqueidentifier;
+DECLARE @ProductType3 uniqueidentifier;
+DECLARE @ProductType4 uniqueidentifier;
+DECLARE @ProductType5 uniqueidentifier;
+DECLARE @ProductType6 uniqueidentifier;
+DECLARE @ProductType7 uniqueidentifier;
+DECLARE @ProductType8 uniqueidentifier;
+DECLARE @ProductType9 uniqueidentifier;
+DECLARE @ProductType10 uniqueidentifier;
+DECLARE @ProductType11 uniqueidentifier;
+DECLARE @ProductType12 uniqueidentifier;
+DECLARE @ProductType13 uniqueidentifier;
+DECLARE @ProductType14 uniqueidentifier;
+DECLARE @ProductType15 uniqueidentifier;
+DECLARE @ProductType16 uniqueidentifier;
+DECLARE @ProductType17 uniqueidentifier;
+DECLARE @ProductType18 uniqueidentifier;
+DECLARE @ProductType19 uniqueidentifier;
+DECLARE @ProductType20 uniqueidentifier;
 
 SELECT @Customer1 = NewID();
 SELECT @Customer2 = NewID();
@@ -408,6 +406,48 @@ SELECT @Customer7 = NewID();
 SELECT @Customer8 = NewID();
 SELECT @Customer9 = NewID();
 SELECT @Customer10 = NewID();
+SELECT @ProductType1 = NewID();
+SELECT @ProductType2 = NewID();
+SELECT @ProductType3 = NewID();
+SELECT @ProductType4 = NewID();
+SELECT @ProductType5 = NewID();
+SELECT @ProductType6 = NewID();
+SELECT @ProductType7 = NewID();
+SELECT @ProductType8 = NewID();
+SELECT @ProductType9 = NewID();
+SELECT @ProductType10 = NewID();
+SELECT @ProductType11 = NewID();
+SELECT @ProductType12 = NewID();
+SELECT @ProductType13 = NewID();
+SELECT @ProductType14 = NewID();
+SELECT @ProductType15 = NewID();
+SELECT @ProductType16 = NewID();
+SELECT @ProductType17 = NewID();
+SELECT @ProductType18 = NewID();
+SELECT @ProductType19 = NewID();
+SELECT @ProductType20 = NewID();
+
+INSERT INTO PRODUCT_TYPES VALUES
+(@ProductType1, 'Gold Necklace'),
+(@ProductType2, 'Mens Watch'),
+(@ProductType3, 'Gold Ring'),
+(@ProductType4, 'Gold Earrings'),
+(@ProductType5, 'Gold Bracelet'),
+(@ProductType6, 'Gold Cuff Links'),
+(@ProductType7, 'Gold Brooch'),
+(@ProductType8, 'Gold Crown'),
+(@ProductType9, 'Gold Special Order'),
+(@ProductType10, 'Silver Necklace'),
+(@ProductType11, 'Womens Watch'),
+(@ProductType12, 'Silver Ring'),
+(@ProductType13, 'Silver Earrings'),
+(@ProductType14, 'Silver Bracelet'),
+(@ProductType15, 'Silver Cuff Links'),
+(@ProductType16, 'Silver Brooch'),
+(@ProductType17, 'Silver Crown'),
+(@ProductType18, 'Silver Special Order'),
+(@ProductType19, 'Pendants'),
+(@ProductType20, 'Anklets');
 
 INSERT INTO CUSTOMERS VALUES
 (@Customer1, 'Cari', 'Dunsford', '4951 Moland Pass', null, 'Loretto', 'MN', '55598', '763-979-1427', 'cdunsford0@amazon.de', 1, 'f', '1970-11-01', '2010-11-03 23:06:17', '2015-03-02 10:05:27'),
@@ -445,7 +485,22 @@ INSERT INTO HISTORIC_REWARDS VALUES
 (NEWID(), @Customer7, '4/15/2017', 550, '9/15/2017', 0),
 (NEWID(), @Customer7, '3/15/2017', 350, '7/15/2017', 1),
 (NEWID(), @Customer7, '2/15/2018', 850, '11/15/2018', 0);
+
+INSERT INTO CUSTOMER_PREFERENCES VALUES
+(@Customer1, @ProductType2, 10, 1, 1),
+(@Customer2, @ProductType6, 2, 0, 1),
+(@Customer2, @ProductType4, 1, 0, 1),
+(@Customer3, @ProductType8, 5, 0, 1),
+(@Customer4, @ProductType20, 6, 1, 0),
+(@Customer4, @ProductType11, 10, 1, 1),
+(@Customer4, @ProductType18, 7, 0, 1),
+(@Customer5, @ProductType12, 8, 1, 1),
+(@Customer5, @ProductType2, 2, 1, 0),
+(@Customer6, @ProductType3, 5, 1, 0),
+(@Customer7, @ProductType4, 8, 1, 1),
+(@Customer8, @ProductType6, 10, 1, 0),
+(@Customer9, @ProductType5, 10, 0, 1),
+(@Customer9, @ProductType1, 3, 1, 0),
+(@Customer10, @ProductType11, 5, 1, 0),
+(@Customer10, @ProductType12, 8, 1, 0);
 GO
-
-
-
