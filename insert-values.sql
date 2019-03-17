@@ -587,6 +587,98 @@ INSERT INTO PRODUCTS VALUES
 (@ManufacturedProduct19, @ProductType13, 'ManufacturedProduct19 - Size 5, Womens', 500.00, 1),
 (@ManufacturedProduct20, @ProductType14, 'ManufacturedProduct20 - Size 3, Mens', 300.00, 1);
 
+DECLARE @Artist1 uniqueidentifier;
+DECLARE @Artist2 uniqueidentifier;
+DECLARE @Artist3 uniqueidentifier;
+DECLARE @Artist4 uniqueidentifier;
+DECLARE @Artist5 uniqueidentifier;
+DECLARE @Artist6 uniqueidentifier;
+DECLARE @Artist7 uniqueidentifier;
+DECLARE @Artist8 uniqueidentifier;
+DECLARE @Artist9 uniqueidentifier;
+DECLARE @Artist10 uniqueidentifier;
+DECLARE @Artist11 uniqueidentifier;
+DECLARE @Artist12 uniqueidentifier;
+DECLARE @Artist13 uniqueidentifier;
+DECLARE @Artist14 uniqueidentifier;
+DECLARE @Artist15 uniqueidentifier;
+
+SELECT @Artist1 = NewID();
+SELECT @Artist2 = NewID();
+SELECT @Artist3 = NewID();
+SELECT @Artist4 = NewID();
+SELECT @Artist5 = NewID();
+SELECT @Artist6 = NewID();
+SELECT @Artist7 = NewID();
+SELECT @Artist8 = NewID();
+SELECT @Artist9 = NewID();
+SELECT @Artist10 = NewID();
+SELECT @Artist11 = NewID();
+SELECT @Artist12 = NewID();
+SELECT @Artist13 = NewID();
+SELECT @Artist14 = NewID();
+SELECT @Artist15 = NewID();
+
+INSERT INTO ARTISTS VALUES
+(@Artist1, 'Ernest', 'Aleksandrov', '21 Dwight Pass', NULL, NULL, 'Baiyang', NULL, '65150', NULL, 'CN', '+86 517 190 5961', 'ealeksandrov0@stumbleupon.com', 70, '2014-11-10 19:13:50', '2016-10-20 21:45:03'),
+(@Artist2, 'Jarrod', 'Laba', '432 Towne Drive', NULL, NULL, 'Sunduan', NULL, '65150', NULL, 'CN', '+86 591 311 3486', 'jlaba1@shinystat.com', 53, '2014-07-16 21:23:14', '2016-12-24 14:44:42'),
+(@Artist3, 'Gordy', 'Giacovelli', '16094 Nobel Plaza', NULL, NULL, 'Macha', NULL, '65150', NULL, 'CN', '+86 972 647 9435', 'ggiacovelli2@de.vu', 60, '2017-02-19 00:40:13', '2018-11-13 09:55:29'),
+(@Artist4, 'Corbett', 'Spira', '79582 Packers Place', NULL, NULL, 'Shanjie', NULL, '65150', NULL, 'CN', '+86 748 765 2202', 'cspira3@abc.net.au', 60, '2014-09-17 08:22:10', '2016-11-13 07:53:52'),
+(@Artist5, 'Delilah', 'Fowlds', '59126 6th Drive', NULL, NULL, 'Zhaojia', NULL, '65150', NULL, 'CN', '+86 930 876 9336', 'dfowlds4@dedecms.com', 68, '2013-12-09 17:39:42', '2015-11-10 14:22:52'),
+(@Artist6, 'Libbey', 'Bardwell', '69 Maryland Road', NULL, NULL, 'Yaogu', NULL, '65150', NULL, 'CN', '+86 294 783 9631', 'lbardwell5@dmoz.org', 54, '2014-10-15 05:45:18', '2015-11-05 18:32:13'),
+(@Artist7, 'Olivier', 'Barlace', '252 Mifflin Road', NULL, NULL, 'Pingtan', NULL, '65150', NULL, 'CN', '+86 108 123 6088', 'obarlace6@smugmug.com', 60, '2012-02-01 06:43:52', '2015-08-01 17:14:32'),
+(@Artist8, 'Bennett', 'Shrieves', '22 Daystar Trail', NULL, NULL, 'Heqiao', NULL, '65150', NULL, 'CN', '+86 294 644 0613', 'bshrieves7@timesonline.co.uk', 60, '2010-02-20 05:33:05', '2014-05-16 20:47:03'),
+(@Artist9, 'Melodee', 'Moniker', '824 Johnson Road', NULL, NULL, 'Sirindhorn', NULL, '65150', NULL, 'TH', '+66 390 266 7945', 'mmoniker8@gov.uk', 60, '2014-12-25 20:42:19', '2016-05-22 14:33:10'),
+(@Artist10, 'Jacquetta', 'Dumberrill', '7553 Westport Center', NULL, NULL, 'Fuwen', NULL, '65150', NULL, 'CN', '+86 939 757 1050', 'jdumberrill9@delicious.com', 64, '2011-02-01 21:38:19', '2018-02-20 20:31:30'),
+(@Artist11, 'Marin', 'Raymond', '25 Village Green Road', NULL, NULL, 'Yongxing', NULL, '65150', NULL, 'CN', '+86 539 684 1487', 'mraymonda@miitbeian.gov.cn', 60, '2012-10-10 23:30:55', '2014-01-20 10:23:37'),
+(@Artist12, 'Candi', 'Blucher', '54043 Rockefeller Place', NULL, NULL, 'Huilong', NULL, '65150', NULL, 'CN', '+86 182 718 2406', 'cblucherb@deviantart.com', 60, '2016-01-01 18:19:25', '2017-05-04 04:10:41'),
+(@Artist13, 'Jorie', 'Grigs', '34 Meadow Valley Crossing', NULL, NULL, 'Poste du Lac', NULL, '65150', NULL, 'VN', '+84 223 447 4691', 'jgrigsc@prnewswire.com', 70, '2014-01-16 19:07:05', '2019-03-08 12:50:51'),
+(@Artist14, 'Jasmine', 'Carnow', '599 Ilene Way', NULL, NULL, 'Fengshou', NULL, '65150', NULL, 'CN', '+86 998 158 5487', 'jcarnowd@cbslocal.com', 59, '2015-01-14 13:09:32', '2015-01-23 21:26:30'),
+(@Artist15, 'Weston', 'Gartside', '729 Cascade Parkway', NULL, NULL, 'Yangjingziwan', NULL, '65150', NULL, 'CN', '+86 141 678 9507', 'wgartsidee@google.com', 58, '2012-02-01 14:02:37', '2014-03-26 17:04:36');
+
+INSERT INTO ARTISAN_PRODUCTS VALUES
+(@ArtisanProduct1, @Artist2, 60, '2015-08-15 08:45:56', '2017-04-24 14:28:02', '2015-03-31 23:30:14'),
+(@ArtisanProduct2, @Artist3, 65, '2017-10-01 19:09:27', '2013-06-20 13:11:09', '2018-02-23 05:54:28'),
+(@ArtisanProduct3, @Artist1, 70, '2015-11-05 05:29:36', '2018-05-11 09:43:51', '2016-12-19 11:10:04'),
+(@ArtisanProduct4, @Artist12, 60, '2014-07-14 14:24:36', '2016-03-25 11:50:05', '2012-12-30 13:16:05'),
+(@ArtisanProduct5, @Artist11, 60, '2012-09-10 15:47:08', '2018-11-26 02:26:03', '2014-07-04 00:20:12'),
+(@ArtisanProduct6, @Artist14, 65, '2012-05-21 16:57:23', '2013-03-13 03:21:29', '2012-04-25 05:47:11'),
+(@ArtisanProduct7, @Artist7, 63, '2018-12-17 01:46:29', '2014-10-24 23:00:53', '2014-11-10 12:15:02'),
+(@ArtisanProduct8, @Artist4, 60, '2018-08-08 07:19:42', '2017-04-16 11:35:48', '2015-02-08 15:15:56'),
+(@ArtisanProduct9, @Artist9, 72, '2015-08-21 22:15:09', '2013-07-15 10:46:12', '2014-10-29 14:19:38'),
+(@ArtisanProduct10, @Artist11, 70, '2013-07-23 20:06:13', '2013-01-14 17:50:06', '2012-05-02 10:27:26'),
+(@ArtisanProduct11, @Artist15, 65, '2012-12-31 10:20:38', '2015-07-14 12:31:20', '2018-04-30 05:22:52'),
+(@ArtisanProduct12, @Artist8, 63, '2015-11-17 23:11:49', '2015-11-19 03:03:49', '2013-08-01 22:31:27'),
+(@ArtisanProduct13, @Artist5, 68, '2018-01-20 15:21:50', '2018-06-14 16:47:14', '2015-04-09 14:47:04'),
+(@ArtisanProduct14, @Artist7, 69, '2015-04-18 10:09:06', '2016-05-08 12:29:59', '2014-03-18 13:25:37'),
+(@ArtisanProduct15, @Artist13, 60, '2014-08-12 00:48:23', '2018-01-07 00:12:05', '2014-07-15 14:22:55'),
+(@ArtisanProduct16, @Artist11, 60, '2016-02-03 12:38:25', '2014-06-06 10:28:50', '2016-08-19 19:29:15'),
+(@ArtisanProduct17, @Artist10, 72, '2012-06-14 01:46:09', '2017-06-13 02:15:01', '2014-09-01 03:31:13'),
+(@ArtisanProduct18, @Artist9, 71, '2018-12-18 10:54:38', '2018-04-07 10:55:32', '2013-12-19 03:09:52'),
+(@ArtisanProduct19, @Artist3, 60, '2016-10-17 11:59:32', '2017-07-21 06:16:55', '2012-11-03 22:15:50'),
+(@ArtisanProduct20, @Artist6, 64, '2016-10-08 13:16:51', '2014-09-19 01:34:02', '2018-01-24 21:06:13');
+
+INSERT INTO MANUFACTURED_PRODUCTS VALUES
+(@ManufacturedProduct1, @Manufacturer2, 5, 350.00),
+(@ManufacturedProduct2, @Manufacturer1, 15, 2200.00),
+(@ManufacturedProduct3, @Manufacturer5, 10, 250.00),
+(@ManufacturedProduct4, @Manufacturer6, 11, 1100.00),
+(@ManufacturedProduct5, @Manufacturer8, 3, 3300.00),
+(@ManufacturedProduct6, @Manufacturer1, 6, 240.00),
+(@ManufacturedProduct7, @Manufacturer14, 10, 1200.00),
+(@ManufacturedProduct8, @Manufacturer12, 25, 350.00),
+(@ManufacturedProduct9, @Manufacturer2, 15, 700.00),
+(@ManufacturedProduct10, @Manufacturer13, 11, 850.00),
+(@ManufacturedProduct11, @Manufacturer1, 10, 500.00),
+(@ManufacturedProduct12, @Manufacturer7, 20, 450.00),
+(@ManufacturedProduct13, @Manufacturer9, 25, 300.00),
+(@ManufacturedProduct14, @Manufacturer11, 22, 1000.00),
+(@ManufacturedProduct15, @Manufacturer10, 6, 500.00),
+(@ManufacturedProduct16, @Manufacturer7, 2, 300.00),
+(@ManufacturedProduct17, @Manufacturer9, 4, 600.00),
+(@ManufacturedProduct18, @Manufacturer3, 10, 250.00),
+(@ManufacturedProduct19, @Manufacturer6, 12, 450.00),
+(@ManufacturedProduct20, @Manufacturer12, 4, 200.00);
 
 DECLARE @Customer1 uniqueidentifier;
 DECLARE @Customer2 uniqueidentifier;
@@ -664,53 +756,4 @@ INSERT INTO CUSTOMER_PREFERENCES VALUES
 (@Customer9, @ProductType1, 3, 1, 0),
 (@Customer10, @ProductType11, 5, 1, 0),
 (@Customer10, @ProductType12, 8, 1, 0);
-
-DECLARE @Artist1 uniqueidentifier;
-DECLARE @Artist2 uniqueidentifier;
-DECLARE @Artist3 uniqueidentifier;
-DECLARE @Artist4 uniqueidentifier;
-DECLARE @Artist5 uniqueidentifier;
-DECLARE @Artist6 uniqueidentifier;
-DECLARE @Artist7 uniqueidentifier;
-DECLARE @Artist8 uniqueidentifier;
-DECLARE @Artist9 uniqueidentifier;
-DECLARE @Artist10 uniqueidentifier;
-DECLARE @Artist11 uniqueidentifier;
-DECLARE @Artist12 uniqueidentifier;
-DECLARE @Artist13 uniqueidentifier;
-DECLARE @Artist14 uniqueidentifier;
-DECLARE @Artist15 uniqueidentifier;
-
-SELECT @Artist1 = NewID();
-SELECT @Artist2 = NewID();
-SELECT @Artist3 = NewID();
-SELECT @Artist4 = NewID();
-SELECT @Artist5 = NewID();
-SELECT @Artist6 = NewID();
-SELECT @Artist7 = NewID();
-SELECT @Artist8 = NewID();
-SELECT @Artist9 = NewID();
-SELECT @Artist10 = NewID();
-SELECT @Artist11 = NewID();
-SELECT @Artist12 = NewID();
-SELECT @Artist13 = NewID();
-SELECT @Artist14 = NewID();
-SELECT @Artist15 = NewID();
-
-INSERT INTO ARTISTS VALUES
-(@Artist1, 'Ernest', 'Aleksandrov', '21 Dwight Pass', NULL, NULL, 'Baiyang', NULL, '65150', NULL, 'CN', '+86 517 190 5961', 'ealeksandrov0@stumbleupon.com', 70, '2014-11-10 19:13:50', '2016-10-20 21:45:03'),
-(@Artist2, 'Jarrod', 'Laba', '432 Towne Drive', NULL, NULL, 'Sunduan', NULL, '65150', NULL, 'CN', '+86 591 311 3486', 'jlaba1@shinystat.com', 53, '2014-07-16 21:23:14', '2016-12-24 14:44:42'),
-(@Artist3, 'Gordy', 'Giacovelli', '16094 Nobel Plaza', NULL, NULL, 'Macha', NULL, '65150', NULL, 'CN', '+86 972 647 9435', 'ggiacovelli2@de.vu', 60, '2017-02-19 00:40:13', '2018-11-13 09:55:29'),
-(@Artist4, 'Corbett', 'Spira', '79582 Packers Place', NULL, NULL, 'Shanjie', NULL, '65150', NULL, 'CN', '+86 748 765 2202', 'cspira3@abc.net.au', 60, '2014-09-17 08:22:10', '2016-11-13 07:53:52'),
-(@Artist5, 'Delilah', 'Fowlds', '59126 6th Drive', NULL, NULL, 'Zhaojia', NULL, '65150', NULL, 'CN', '+86 930 876 9336', 'dfowlds4@dedecms.com', 68, '2013-12-09 17:39:42', '2015-11-10 14:22:52'),
-(@Artist6, 'Libbey', 'Bardwell', '69 Maryland Road', NULL, NULL, 'Yaogu', NULL, '65150', NULL, 'CN', '+86 294 783 9631', 'lbardwell5@dmoz.org', 54, '2014-10-15 05:45:18', '2015-11-05 18:32:13'),
-(@Artist7, 'Olivier', 'Barlace', '252 Mifflin Road', NULL, NULL, 'Pingtan', NULL, '65150', NULL, 'CN', '+86 108 123 6088', 'obarlace6@smugmug.com', 60, '2012-02-01 06:43:52', '2015-08-01 17:14:32'),
-(@Artist8, 'Bennett', 'Shrieves', '22 Daystar Trail', NULL, NULL, 'Heqiao', NULL, '65150', NULL, 'CN', '+86 294 644 0613', 'bshrieves7@timesonline.co.uk', 60, '2010-02-20 05:33:05', '2014-05-16 20:47:03'),
-(@Artist9, 'Melodee', 'Moniker', '824 Johnson Road', NULL, NULL, 'Sirindhorn', NULL, '65150', NULL, 'TH', '+66 390 266 7945', 'mmoniker8@gov.uk', 60, '2014-12-25 20:42:19', '2016-05-22 14:33:10'),
-(@Artist10, 'Jacquetta', 'Dumberrill', '7553 Westport Center', NULL, NULL, 'Fuwen', NULL, '65150', NULL, 'CN', '+86 939 757 1050', 'jdumberrill9@delicious.com', 64, '2011-02-01 21:38:19', '2018-02-20 20:31:30'),
-(@Artist11, 'Marin', 'Raymond', '25 Village Green Road', NULL, NULL, 'Yongxing', NULL, '65150', NULL, 'CN', '+86 539 684 1487', 'mraymonda@miitbeian.gov.cn', 60, '2012-10-10 23:30:55', '2014-01-20 10:23:37'),
-(@Artist12, 'Candi', 'Blucher', '54043 Rockefeller Place', NULL, NULL, 'Huilong', NULL, '65150', NULL, 'CN', '+86 182 718 2406', 'cblucherb@deviantart.com', 60, '2016-01-01 18:19:25', '2017-05-04 04:10:41'),
-(@Artist13, 'Jorie', 'Grigs', '34 Meadow Valley Crossing', NULL, NULL, 'Poste du Lac', NULL, '65150', NULL, 'VN', '+84 223 447 4691', 'jgrigsc@prnewswire.com', 70, '2014-01-16 19:07:05', '2019-03-08 12:50:51'),
-(@Artist14, 'Jasmine', 'Carnow', '599 Ilene Way', NULL, NULL, 'Fengshou', NULL, '65150', NULL, 'CN', '+86 998 158 5487', 'jcarnowd@cbslocal.com', 59, '2015-01-14 13:09:32', '2015-01-23 21:26:30'),
-(@Artist15, 'Weston', 'Gartside', '729 Cascade Parkway', NULL, NULL, 'Yangjingziwan', NULL, '65150', NULL, 'CN', '+86 141 678 9507', 'wgartsidee@google.com', 58, '2012-02-01 14:02:37', '2014-03-26 17:04:36');
 GO
