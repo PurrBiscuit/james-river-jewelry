@@ -463,6 +463,83 @@ INSERT INTO PRODUCT_TYPES VALUES
 (@ProductType19, 'Pendants'),
 (@ProductType20, 'Anklets');
 
+DECLARE @Customer1 uniqueidentifier;
+DECLARE @Customer2 uniqueidentifier;
+DECLARE @Customer3 uniqueidentifier;
+DECLARE @Customer4 uniqueidentifier;
+DECLARE @Customer5 uniqueidentifier;
+DECLARE @Customer6 uniqueidentifier;
+DECLARE @Customer7 uniqueidentifier;
+DECLARE @Customer8 uniqueidentifier;
+DECLARE @Customer9 uniqueidentifier;
+DECLARE @Customer10 uniqueidentifier;
+
+SELECT @Customer1 = NewID();
+SELECT @Customer2 = NewID();
+SELECT @Customer3 = NewID();
+SELECT @Customer4 = NewID();
+SELECT @Customer5 = NewID();
+SELECT @Customer6 = NewID();
+SELECT @Customer7 = NewID();
+SELECT @Customer8 = NewID();
+SELECT @Customer9 = NewID();
+SELECT @Customer10 = NewID();
+
+INSERT INTO CUSTOMERS VALUES
+(@Customer1, 'Cari', 'Dunsford', '4951 Moland Pass', NULL, 'Loretto', 'MN', '55598', '763-979-1427', 'cdunsford0@amazon.de', 1, 'f', '1970-11-01', '2010-11-03 23:06:17', '2015-03-02 10:05:27'),
+(@Customer2, 'Hector', 'Pether', '8 Golf Course Junction', NULL, 'Saint Paul', 'MN', '55108', '651-796-7807', 'hpether1@pbs.org', 1, 'm', '1974-12-01', '2013-09-10 00:52:43', '2016-09-29 06:23:48'),
+(@Customer3, 'Jacklyn', 'Wolfer', '461 Schurz Drive', 'Apt 102C', 'Minneapolis', 'MN', '55480', '612-630-3593', 'jwolfer2@free.fr', 0, 'f', '1960-02-01', '2005-09-13 19:55:21', '2012-08-14 06:46:30'),
+(@Customer4, 'Leigha', 'Henaughan', '9 Del Sol Point', NULL, 'Monticello', 'MN', '55565', '763-110-6767', 'lhenaughan3@cisco.com', 1, 'f', '1960-02-01', '2010-11-25 11:55:43', '2012-07-08 05:12:02'),
+(@Customer5, 'Caril', 'Downage', '5 Talmadge Junction', NULL, 'Minneapolis', 'MN', '55487', '612-958-2901', 'cdownage4@technorati.com', 0, 'f', '1960-02-01', '2011-07-07 18:18:47', '2016-12-28 15:03:38'),
+(@Customer6, 'Phip', 'Quail', '835 Bultman Avenue', NULL, 'Saint Paul', 'MN', '55127', '612-590-2303', 'pquail5@toplist.cz', 0, 'm', '1955-02-10', '2016-02-12 02:53:50', '2018-11-11 01:09:15'),
+(@Customer7, 'Mildrid', 'Wilden', '7 Grim Way', NULL, 'Saint Paul', 'MN', '55146', '651-607-1019', 'mwilden6@typepad.com', 1, 'f', '1945-02-01', '2014-10-30 04:28:07', '2015-08-20 09:49:57'),
+(@Customer8, 'Modestine', 'Burress', '9910 Division Avenue', NULL, 'Saint Paul', 'MN', '55127', '651-934-3925', 'mburress7@alexa.com', 0, 'f', '1950-02-01', '2016-01-13 18:39:13', '2018-09-12 16:25:39'),
+(@Customer9, 'Helge', 'Sirrell', '86 Katie Pass', NULL, 'Minneapolis', 'MN', '55480', '612-303-7303', 'hsirrell8@sourceforge.net', 0, 'f', '1966-02-01', '2016-09-09 12:00:45', '2017-06-21 13:57:32'),
+(@Customer10, 'Irwinn', 'Spurrier', '607 Atwood Place', NULL, 'Minneapolis', 'MN', '55448', '763-538-3139', 'ispurrier9@php.net', 0, 'm', '1951-02-01', '2013-02-01 19:57:58', '2015-05-02 23:59:24');
+
+INSERT INTO ACTIVE_REWARDS VALUES
+(NEWID(), @Customer1, '11/15/2018', 200, '5/15/2018'),
+(NEWID(), @Customer1, '1/19/2018', 300, '7/19/2018'),
+(NEWID(), @Customer2, '10/14/2018', 500, '5/14/2018'),
+(NEWID(), @Customer4, '9/22/2018', 1300, '3/22/2018'),
+(NEWID(), @Customer7, '9/17/2018', 1000, '3/17/2018'),
+(NEWID(), @Customer7, '2/14/2018', 600, '8/14/2018');
+
+INSERT INTO HISTORIC_REWARDS VALUES
+(NEWID(), @Customer1, '11/15/2010', 250, '1/25/2011', 0),
+(NEWID(), @Customer1, '1/15/2011', 1250, '2/15/2012', 1),
+(NEWID(), @Customer1, '5/15/2012', 2250, '1/15/2013', 0),
+(NEWID(), @Customer1, '11/15/2013', 450, '4/20/2014', 1),
+(NEWID(), @Customer2, '11/15/2012', 550, '1/15/2013', 0),
+(NEWID(), @Customer2, '5/15/2014', 600, '11/15/2014', 1),
+(NEWID(), @Customer2, '2/15/2015', 750, '3/15/2015', 1),
+(NEWID(), @Customer4, '3/15/2017', 800, '9/15/2017', 1),
+(NEWID(), @Customer4, '10/15/2013', 400, '2/15/2014', 1),
+(NEWID(), @Customer4, '8/15/2014', 550, '11/15/2014', 1),
+(NEWID(), @Customer7, '10/15/2015', 650, '11/15/2015', 0),
+(NEWID(), @Customer7, '6/15/2016', 850, '11/15/2016', 1),
+(NEWID(), @Customer7, '4/15/2017', 550, '9/15/2017', 0),
+(NEWID(), @Customer7, '3/15/2017', 350, '7/15/2017', 1),
+(NEWID(), @Customer7, '2/15/2018', 850, '11/15/2018', 0);
+
+INSERT INTO CUSTOMER_PREFERENCES VALUES
+(@Customer1, @ProductType2, 10, 1, 1),
+(@Customer2, @ProductType6, 2, 0, 1),
+(@Customer2, @ProductType4, 1, 0, 1),
+(@Customer3, @ProductType8, 5, 0, 1),
+(@Customer4, @ProductType20, 6, 1, 0),
+(@Customer4, @ProductType11, 10, 1, 1),
+(@Customer4, @ProductType18, 7, 0, 1),
+(@Customer5, @ProductType12, 8, 1, 1),
+(@Customer5, @ProductType2, 2, 1, 0),
+(@Customer6, @ProductType3, 5, 1, 0),
+(@Customer7, @ProductType4, 8, 1, 1),
+(@Customer8, @ProductType6, 10, 1, 0),
+(@Customer9, @ProductType5, 10, 0, 1),
+(@Customer9, @ProductType1, 3, 1, 0),
+(@Customer10, @ProductType11, 5, 1, 0),
+(@Customer10, @ProductType12, 8, 1, 0);
+
 DECLARE @ArtisanProduct1 uniqueidentifier;
 DECLARE @ArtisanProduct2 uniqueidentifier;
 DECLARE @ArtisanProduct3 uniqueidentifier;
@@ -679,81 +756,4 @@ INSERT INTO MANUFACTURED_PRODUCTS VALUES
 (@ManufacturedProduct18, @Manufacturer3, 10, 250.00),
 (@ManufacturedProduct19, @Manufacturer6, 12, 450.00),
 (@ManufacturedProduct20, @Manufacturer12, 4, 200.00);
-
-DECLARE @Customer1 uniqueidentifier;
-DECLARE @Customer2 uniqueidentifier;
-DECLARE @Customer3 uniqueidentifier;
-DECLARE @Customer4 uniqueidentifier;
-DECLARE @Customer5 uniqueidentifier;
-DECLARE @Customer6 uniqueidentifier;
-DECLARE @Customer7 uniqueidentifier;
-DECLARE @Customer8 uniqueidentifier;
-DECLARE @Customer9 uniqueidentifier;
-DECLARE @Customer10 uniqueidentifier;
-
-SELECT @Customer1 = NewID();
-SELECT @Customer2 = NewID();
-SELECT @Customer3 = NewID();
-SELECT @Customer4 = NewID();
-SELECT @Customer5 = NewID();
-SELECT @Customer6 = NewID();
-SELECT @Customer7 = NewID();
-SELECT @Customer8 = NewID();
-SELECT @Customer9 = NewID();
-SELECT @Customer10 = NewID();
-
-INSERT INTO CUSTOMERS VALUES
-(@Customer1, 'Cari', 'Dunsford', '4951 Moland Pass', NULL, 'Loretto', 'MN', '55598', '763-979-1427', 'cdunsford0@amazon.de', 1, 'f', '1970-11-01', '2010-11-03 23:06:17', '2015-03-02 10:05:27'),
-(@Customer2, 'Hector', 'Pether', '8 Golf Course Junction', NULL, 'Saint Paul', 'MN', '55108', '651-796-7807', 'hpether1@pbs.org', 1, 'm', '1974-12-01', '2013-09-10 00:52:43', '2016-09-29 06:23:48'),
-(@Customer3, 'Jacklyn', 'Wolfer', '461 Schurz Drive', 'Apt 102C', 'Minneapolis', 'MN', '55480', '612-630-3593', 'jwolfer2@free.fr', 0, 'f', '1960-02-01', '2005-09-13 19:55:21', '2012-08-14 06:46:30'),
-(@Customer4, 'Leigha', 'Henaughan', '9 Del Sol Point', NULL, 'Monticello', 'MN', '55565', '763-110-6767', 'lhenaughan3@cisco.com', 1, 'f', '1960-02-01', '2010-11-25 11:55:43', '2012-07-08 05:12:02'),
-(@Customer5, 'Caril', 'Downage', '5 Talmadge Junction', NULL, 'Minneapolis', 'MN', '55487', '612-958-2901', 'cdownage4@technorati.com', 0, 'f', '1960-02-01', '2011-07-07 18:18:47', '2016-12-28 15:03:38'),
-(@Customer6, 'Phip', 'Quail', '835 Bultman Avenue', NULL, 'Saint Paul', 'MN', '55127', '612-590-2303', 'pquail5@toplist.cz', 0, 'm', '1955-02-10', '2016-02-12 02:53:50', '2018-11-11 01:09:15'),
-(@Customer7, 'Mildrid', 'Wilden', '7 Grim Way', NULL, 'Saint Paul', 'MN', '55146', '651-607-1019', 'mwilden6@typepad.com', 1, 'f', '1945-02-01', '2014-10-30 04:28:07', '2015-08-20 09:49:57'),
-(@Customer8, 'Modestine', 'Burress', '9910 Division Avenue', NULL, 'Saint Paul', 'MN', '55127', '651-934-3925', 'mburress7@alexa.com', 0, 'f', '1950-02-01', '2016-01-13 18:39:13', '2018-09-12 16:25:39'),
-(@Customer9, 'Helge', 'Sirrell', '86 Katie Pass', NULL, 'Minneapolis', 'MN', '55480', '612-303-7303', 'hsirrell8@sourceforge.net', 0, 'f', '1966-02-01', '2016-09-09 12:00:45', '2017-06-21 13:57:32'),
-(@Customer10, 'Irwinn', 'Spurrier', '607 Atwood Place', NULL, 'Minneapolis', 'MN', '55448', '763-538-3139', 'ispurrier9@php.net', 0, 'm', '1951-02-01', '2013-02-01 19:57:58', '2015-05-02 23:59:24');
-
-INSERT INTO ACTIVE_REWARDS VALUES
-(NEWID(), @Customer1, '11/15/2018', 200, '5/15/2018'),
-(NEWID(), @Customer1, '1/19/2018', 300, '7/19/2018'),
-(NEWID(), @Customer2, '10/14/2018', 500, '5/14/2018'),
-(NEWID(), @Customer4, '9/22/2018', 1300, '3/22/2018'),
-(NEWID(), @Customer7, '9/17/2018', 1000, '3/17/2018'),
-(NEWID(), @Customer7, '2/14/2018', 600, '8/14/2018');
-
-INSERT INTO HISTORIC_REWARDS VALUES
-(NEWID(), @Customer1, '11/15/2010', 250, '1/25/2011', 0),
-(NEWID(), @Customer1, '1/15/2011', 1250, '2/15/2012', 1),
-(NEWID(), @Customer1, '5/15/2012', 2250, '1/15/2013', 0),
-(NEWID(), @Customer1, '11/15/2013', 450, '4/20/2014', 1),
-(NEWID(), @Customer2, '11/15/2012', 550, '1/15/2013', 0),
-(NEWID(), @Customer2, '5/15/2014', 600, '11/15/2014', 1),
-(NEWID(), @Customer2, '2/15/2015', 750, '3/15/2015', 1),
-(NEWID(), @Customer4, '3/15/2017', 800, '9/15/2017', 1),
-(NEWID(), @Customer4, '10/15/2013', 400, '2/15/2014', 1),
-(NEWID(), @Customer4, '8/15/2014', 550, '11/15/2014', 1),
-(NEWID(), @Customer7, '10/15/2015', 650, '11/15/2015', 0),
-(NEWID(), @Customer7, '6/15/2016', 850, '11/15/2016', 1),
-(NEWID(), @Customer7, '4/15/2017', 550, '9/15/2017', 0),
-(NEWID(), @Customer7, '3/15/2017', 350, '7/15/2017', 1),
-(NEWID(), @Customer7, '2/15/2018', 850, '11/15/2018', 0);
-
-INSERT INTO CUSTOMER_PREFERENCES VALUES
-(@Customer1, @ProductType2, 10, 1, 1),
-(@Customer2, @ProductType6, 2, 0, 1),
-(@Customer2, @ProductType4, 1, 0, 1),
-(@Customer3, @ProductType8, 5, 0, 1),
-(@Customer4, @ProductType20, 6, 1, 0),
-(@Customer4, @ProductType11, 10, 1, 1),
-(@Customer4, @ProductType18, 7, 0, 1),
-(@Customer5, @ProductType12, 8, 1, 1),
-(@Customer5, @ProductType2, 2, 1, 0),
-(@Customer6, @ProductType3, 5, 1, 0),
-(@Customer7, @ProductType4, 8, 1, 1),
-(@Customer8, @ProductType6, 10, 1, 0),
-(@Customer9, @ProductType5, 10, 0, 1),
-(@Customer9, @ProductType1, 3, 1, 0),
-(@Customer10, @ProductType11, 5, 1, 0),
-(@Customer10, @ProductType12, 8, 1, 0);
 GO
