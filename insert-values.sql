@@ -303,6 +303,28 @@ INSERT INTO LOOKUP_COUNTRIES VALUES
 
 INSERT INTO TAX_RATES VALUES (NewID(), 'Current tax rate as of 3/15/19', '6');
 
+INSERT INTO PRODUCT_TYPES VALUES
+(NewID(), 'Gold Necklace'),
+(NewID(), 'Mens Watch'),
+(NewID(), 'Gold Ring'),
+(NewID(), 'Gold Earrings'),
+(NewID(), 'Gold Bracelet'),
+(NewID(), 'Gold Cuff Links'),
+(NewID(), 'Gold Brooch'),
+(NewID(), 'Gold Crown'),
+(NewID(), 'Gold Special Order'),
+(NewID(), 'Silver Necklace'),
+(NewID(), 'Womens Watch'),
+(NewID(), 'Silver Ring'),
+(NewID(), 'Silver Earrings'),
+(NewID(), 'Silver Bracelet'),
+(NewID(), 'Silver Cuff Links'),
+(NewID(), 'Silver Brooch'),
+(NewID(), 'Silver Crown'),
+(NewID(), 'Silver Special Order'),
+(NewID(), 'Pendants'),
+(NewID(), 'Anklets');
+
 /* insert the values into the LOOKUP_EMPLOYEE_ROLES table
 together with the EMPLOYEES table using variables */
 
