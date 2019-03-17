@@ -756,4 +756,53 @@ INSERT INTO MANUFACTURED_PRODUCTS VALUES
 (@ManufacturedProduct18, @Manufacturer3, 10, 250.00),
 (@ManufacturedProduct19, @Manufacturer6, 12, 450.00),
 (@ManufacturedProduct20, @Manufacturer12, 4, 200.00);
+
+DECLARE @Order1 uniqueidentifier;
+DECLARE @Order2 uniqueidentifier;
+DECLARE @Order3 uniqueidentifier;
+DECLARE @Order4 uniqueidentifier;
+DECLARE @Order5 uniqueidentifier;
+DECLARE @Order6 uniqueidentifier;
+DECLARE @Order7 uniqueidentifier;
+DECLARE @Order8 uniqueidentifier;
+DECLARE @Order9 uniqueidentifier;
+DECLARE @Order10 uniqueidentifier;
+DECLARE @Order11 uniqueidentifier;
+DECLARE @Order12 uniqueidentifier;
+DECLARE @Order13 uniqueidentifier;
+DECLARE @Order14 uniqueidentifier;
+DECLARE @Order15 uniqueidentifier;
+
+SELECT @Order1 = NewID();
+SELECT @Order2 = NewID();
+SELECT @Order3 = NewID();
+SELECT @Order4 = NewID();
+SELECT @Order5 = NewID();
+SELECT @Order6 = NewID();
+SELECT @Order7 = NewID();
+SELECT @Order8 = NewID();
+SELECT @Order9 = NewID();
+SELECT @Order10 = NewID();
+SELECT @Order11 = NewID();
+SELECT @Order12 = NewID();
+SELECT @Order13 = NewID();
+SELECT @Order14 = NewID();
+SELECT @Order15 = NewID();
+
+INSERT INTO ORDERS VALUES
+(@Order1, @Customer1, @Employee6, '2014-10-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order2, @Customer1, @Employee7, '2012-03-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order3, @Customer2, @Employee7, '2011-02-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order4, @Customer3, @Employee7, '2015-10-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order5, @Customer4, @Employee6, '2013-01-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order6, @Customer4, @Employee8, '2012-10-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order7, @Customer5, @Employee8, '2017-10-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order8, @Customer5, @Employee7, '2018-02-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order9, @Customer6, @Employee6, '2013-05-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order10, @Customer6, @Employee7, '2014-09-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order11, @Customer7, @Employee8, '2017-11-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order12, @Customer8, @Employee8, '2012-10-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order13, @Customer9, @Employee7, '2013-08-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order14, @Customer9, @Employee6, '2015-05-08 13:16:51', 0.00, 0.00, 0.00),
+(@Order15, @Customer10, @Employee6, '2012-03-08 13:16:51', 0.00, 0.00, 0.00);
 GO
