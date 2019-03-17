@@ -311,6 +311,24 @@ DECLARE @ManagerID uniqueidentifier;
 DECLARE @ProcurementID uniqueidentifier;
 DECLARE @SalesID uniqueidentifier;
 
+DECLARE @Employee1 uniqueidentifier;
+DECLARE @Employee2 uniqueidentifier;
+DECLARE @Employee3 uniqueidentifier;
+DECLARE @Employee4 uniqueidentifier;
+DECLARE @Employee5 uniqueidentifier;
+DECLARE @Employee6 uniqueidentifier;
+DECLARE @Employee7 uniqueidentifier;
+DECLARE @Employee8 uniqueidentifier;
+
+SELECT @Employee1 = NewID();
+SELECT @Employee2 = NewID();
+SELECT @Employee3 = NewID();
+SELECT @Employee4 = NewID();
+SELECT @Employee5 = NewID();
+SELECT @Employee6 = NewID();
+SELECT @Employee7 = NewID();
+SELECT @Employee8 = NewID();
+
 SELECT @OwnerID = NewID();
 SELECT @ManagerID = NewID();
 SELECT @ProcurementID = NewID();
@@ -323,58 +341,64 @@ INSERT INTO LOOKUP_EMPLOYEE_ROLES VALUES
 (@SalesID, 'Sales', 0);
 
 INSERT INTO EMPLOYEES VALUES
-(NewID(), 'Ronald', 'Jacobs', @OwnerID, '2/10/2005', 1, '68853 Bultman Hill', NULL, 'St Paul', 'MN', '55102', '652-332-1405', 'rjacobs@jamesriverjewelry.com', '1/30/18 9:25:32 AM', '2/15/18 1:38:54 PM'),
-(NewID(), 'Deborah', 'Jacobs', @OwnerID, '2/10/2005', 1, '68853 Bultman Hill', NULL, 'St Paul', 'MN', '55102', '652-332-1507', 'djacobs@jamesriverjewelry.com', '1/30/18 9:25:33 AM', '4/22/18 2:15:54 PM'),
-(NewID(), 'Martin', 'Jacobs', @ManagerID, '2/14/2005', 1, '444 Elka Center', NULL, 'St Paul', 'MN', '55102', '652-342-5039', 'mjacobs@jamesriverjewelry.com', '1/30/18 9:25:34 AM', '1/30/18 9:25:34 AM'),
-(NewID(), 'Thompson', 'Scott', @ManagerID, '2/14/2005', 1, '2 Sutteridge Road', 'Apt 205B', 'St Paul', 'MN', '55103', '652-209-3921', 'sthompson@jamesriverjewelry.com', '1/30/18 9:25:35 AM', '1/30/18 9:25:35 AM'),
-(NewID(), 'Schuster', 'Terry', @ProcurementID, '2/20/2005', 0, '9125 Shelley Road', NULL, 'St Paul', 'MN', '55103', '652-845-0923', 'tschuster@jamesriverjewelry.com', '1/30/18 9:25:36 AM', '1/30/18 9:25:36 AM'),
-(NewID(), 'Evans', 'Michael', @SalesID, '2/24/2005', 0, '9125 Shelley Road', NULL, 'St Paul', 'MN', '55103', '652-845-0923', 'mevans@jamesriverjewelry.com', '1/30/18 9:25:37 AM', '1/30/18 9:25:37 AM'),
-(NewID(), 'Banks', 'Holly', @SalesID, '5/12/2007', 0, '19460 Waywood Road', NULL, 'St Paul', 'MN', '55103', '652-845-0923', 'hbanks@jamesriverjewelry.com', '1/30/18 9:25:38 AM', '3/19/18 2:18:48 PM'),
-(NewID(), 'Vickers', 'Martha', @SalesID, '8/11/2010', 0, '6157 Norway Maple Alley', NULL, 'St Paul', 'MN', '55103', '652-530-3294', 'mvickers@jamesriverjewelry.com', '1/30/18 9:25:39 AM', '1/30/18 9:25:39 AM' );
-GO
+(@Employee1, 'Ronald', 'Jacobs', @OwnerID, '2/10/2005', 1, '68853 Bultman Hill', NULL, 'St Paul', 'MN', '55102', '652-332-1405', 'rjacobs@jamesriverjewelry.com', '1/30/18 9:25:32 AM', '2/15/18 1:38:54 PM'),
+(@Employee2, 'Deborah', 'Jacobs', @OwnerID, '2/10/2005', 1, '68853 Bultman Hill', NULL, 'St Paul', 'MN', '55102', '652-332-1507', 'djacobs@jamesriverjewelry.com', '1/30/18 9:25:33 AM', '4/22/18 2:15:54 PM'),
+(@Employee3, 'Martin', 'Jacobs', @ManagerID, '2/14/2005', 1, '444 Elka Center', NULL, 'St Paul', 'MN', '55102', '652-342-5039', 'mjacobs@jamesriverjewelry.com', '1/30/18 9:25:34 AM', '1/30/18 9:25:34 AM'),
+(@Employee4, 'Thompson', 'Scott', @ManagerID, '2/14/2005', 1, '2 Sutteridge Road', 'Apt 205B', 'St Paul', 'MN', '55103', '652-209-3921', 'sthompson@jamesriverjewelry.com', '1/30/18 9:25:35 AM', '1/30/18 9:25:35 AM'),
+(@Employee5, 'Schuster', 'Terry', @ProcurementID, '2/20/2005', 0, '9125 Shelley Road', NULL, 'St Paul', 'MN', '55103', '652-845-0923', 'tschuster@jamesriverjewelry.com', '1/30/18 9:25:36 AM', '1/30/18 9:25:36 AM'),
+(@Employee6, 'Evans', 'Michael', @SalesID, '2/24/2005', 0, '9125 Shelley Road', NULL, 'St Paul', 'MN', '55103', '652-845-0923', 'mevans@jamesriverjewelry.com', '1/30/18 9:25:37 AM', '1/30/18 9:25:37 AM'),
+(@Employee7, 'Banks', 'Holly', @SalesID, '5/12/2007', 0, '19460 Waywood Road', NULL, 'St Paul', 'MN', '55103', '652-845-0923', 'hbanks@jamesriverjewelry.com', '1/30/18 9:25:38 AM', '3/19/18 2:18:48 PM'),
+(@Employee8, 'Vickers', 'Martha', @SalesID, '8/11/2010', 0, '6157 Norway Maple Alley', NULL, 'St Paul', 'MN', '55103', '652-530-3294', 'mvickers@jamesriverjewelry.com', '1/30/18 9:25:39 AM', '1/30/18 9:25:39 AM' );
+
+DECLARE @Manufacturer1 uniqueidentifier;
+DECLARE @Manufacturer2 uniqueidentifier;
+DECLARE @Manufacturer3 uniqueidentifier;
+DECLARE @Manufacturer4 uniqueidentifier;
+DECLARE @Manufacturer5 uniqueidentifier;
+DECLARE @Manufacturer6 uniqueidentifier;
+DECLARE @Manufacturer7 uniqueidentifier;
+DECLARE @Manufacturer8 uniqueidentifier;
+DECLARE @Manufacturer9 uniqueidentifier;
+DECLARE @Manufacturer10 uniqueidentifier;
+DECLARE @Manufacturer11 uniqueidentifier;
+DECLARE @Manufacturer12 uniqueidentifier;
+DECLARE @Manufacturer13 uniqueidentifier;
+DECLARE @Manufacturer14 uniqueidentifier;
+DECLARE @Manufacturer15 uniqueidentifier;
+
+SELECT @Manufacturer1 = NewID();
+SELECT @Manufacturer2 = NewID();
+SELECT @Manufacturer3 = NewID();
+SELECT @Manufacturer4 = NewID();
+SELECT @Manufacturer5 = NewID();
+SELECT @Manufacturer6 = NewID();
+SELECT @Manufacturer7 = NewID();
+SELECT @Manufacturer8 = NewID();
+SELECT @Manufacturer9 = NewID();
+SELECT @Manufacturer10 = NewID();
+SELECT @Manufacturer11 = NewID();
+SELECT @Manufacturer12 = NewID();
+SELECT @Manufacturer13 = NewID();
+SELECT @Manufacturer14 = NewID();
+SELECT @Manufacturer15 = NewID();
 
 INSERT INTO MANUFACTURERS VALUES
-(NewID(), 'Kerluke-Funk', '7 Esker Point', NULL, 'Spring', 'TX', '77388', '832-661-6162', 'bmullaly0@infoseek.co.jp', NULL, '5/23/2018 9:25:39 AM', '11/5/2018 9:25:39 AM'),
-(NewID(), 'Swift, Franecki and Moen', '45 Oak Valley Lane', NULL, 'Los Angeles', 'CA', '90045', '562-165-1785', 'esterte1@irs.gov', 'Ericka Sterte', '4/2/2010 9:25:39 AM', '4/26/2018 9:25:39 AM'),
-(NewID(), 'Larson Inc', '97710 Lakewood Avenue', NULL, 'Fargo', 'ND', '58106', '701-626-7877', 'hnewtown2@wp.com', NULL, '9/28/2015 9:25:39 AM', '1/17/2019 9:25:39 AM'),
-(NewID(), 'Boyle-Howe', '95 Lien Alley', NULL, 'Milwaukee', 'WI', '53285', '414-646-3278', 'tweinmann3@theglobeandmail.com', 'Trent Weinmann', '1/20/2011 9:25:39 AM', '11/9/2018 9:25:39 AM'),
-(NewID(), 'Hessel LLC', '5653 Butternut Court', NULL, 'San Antonio', 'TX', '78230', '210-825-1092', 'sswale4@flavors.me', NULL, '5/16/2014 9:25:39 AM', '10/16/2013 9:25:39 AM'),
-(NewID(), 'Hagenes-Brakus', '50768 Farwell Circle', NULL, 'Denver', 'CO', '80291', '303-853-0981', 'bbagger5@altervista.org', 'Brent Bagger', '5/16/2012 9:25:39 AM', '1/19/2017 9:25:39 AM'),
-(NewID(), 'Barrows Group', '61 Moland Terrace', 'Suite 200', 'Houston', 'TX', '77030', '832-383-3001', 'alappin6@yellowpages.com', NULL, '2/6/2018 9:25:39 AM', '5/22/2018 9:25:39 AM'),
-(NewID(), 'MacGyver LLC', '26 Russell Alley', NULL, 'Amarillo', 'TX', '79105', '806-589-3642', 'lmcelrath7@livejournal.com', 'Lutero McElrath', '10/22/2011 9:25:39 AM', '12/21/2017 9:25:39 AM'),
-(NewID(), 'Lehner, Williamson and Bradtke', '874 Fallview Center', NULL, 'San Diego', 'CA', '92165', '619-811-5073', 'acolt8@flavors.me', 'Ash Colt', '10/22/2011 9:25:39 AM', '9/19/2017 9:25:39 AM'),
-(NewID(), 'D''Amore and Sons', '3665 Mayer Alley', NULL, 'Atlanta', 'GA', '30356', '404-712-7982', 'kmcgragh9@digg.com', 'Kennith McGragh', '12/18/2014 9:25:39 AM', '1/23/2017 9:25:39 AM'),
-(NewID(), 'Connelly-Cartwright', '2 Pierstorff Park', NULL, 'Charleston', 'WV', '25336', '304-617-1191', 'lhowortha@harvard.edu', 'Lisha Howorth', '1/31/2010 9:25:39 AM', '4/1/2012 9:25:39 AM'),
-(NewID(), 'Crooks, Renner and Gleichner', '86 Springview Alley', NULL, 'Harrisburg', 'PA', '17140', '717-364-5422', 'dloitertonb@bandcamp.com', NULL, '3/31/2013', '12/16/2015 9:25:39 AM'),
-(NewID(), 'Schoen-Haley', '24 Lerdahl Junction', NULL, 'Trenton', 'NJ', '08608', '609-912-6602', 'ogarrochc@symantec.com', 'Olly Garroch', '2/25/2016 9:25:39 AM', '10/25/2017 9:25:39 AM'),
-(NewID(), 'Stark, Reinger and Rohan', '682 Merry Plaza', NULL, 'Washington', 'DC', '20205', '202-871-7851', 'hpraundld@hatena.ne.jp', 'Humfrey Praundl', '3/25/2017 9:25:39 AM', '6/27/2018 9:25:39 AM'),
-(NewID(), 'Huel-Aufderhar', '333 Ridge Oak Center', NULL, 'Boston', 'MA', '02216', '617-789-2407', 'dlinkee@archive.org', 'Dione Linke', '3/28/2012 9:25:39 AM', '10/29/2014 9:25:39 AM'),
-(NewID(), 'Maggio-Smitham', '29134 Hayes Park', NULL, 'Galveston', 'TX', '77554', '281-879-5749', 'bgrigoref@berkeley.edu', 'Bald Grigore', '12/4/2010 9:25:39 AM', '2/27/2012 9:25:39 AM'),
-(NewID(), 'Hackett Group', '3553 Pankratz Trail', NULL, 'Des Moines', 'IA', '50330', '515-834-1899', 'ehainingg@yelp.com', 'Estella Haining', '1/30/2012 9:25:39 AM', '12/17/2014 9:25:39 AM'),
-(NewID(), 'Jaskolski-Davis', '9 Hazelcrest Pass', NULL, 'Flushing', 'NY', '11388', '347-822-2042', 'jlippetth@flickr.com', 'Julianne Lippett', '9/6/2010 9:25:39 AM', '6/10/2014 9:25:39 AM'),
-(NewID(), 'Moore, Mann and Torp', '92498 Huxley Junction', NULL, 'Washington', 'DC', '20016', '202-711-7399', 'ohackfordi@ox.ac.uk', 'Olva Hackford', '11/21/2018 9:25:39 AM', '1/20/2019 9:25:39 AM'),
-(NewID(), 'Yost, Hamill and Collins', '612 Maple Circle', NULL, 'Spokane', 'WA', '99210', '509-526-5788', 'mmackeigj@microsoft.com', 'Mary MacKeig', '9/6/2012 9:25:39 AM', '4/30/2018 9:25:39 AM'),
-(NewID(), 'Smith, O''Conner and Fahey', '16 Ohio Way', 'Suite 100', 'Springfield', 'IL', '62764', '217-993-5716', 'fgrimoldbyk@vistaprint.com', 'Florance Grimoldby', '10/27/2013 9:25:39 AM', '4/17/2017 9:25:39 AM'),
-(NewID(), 'Schaefer, Hamill and Luettgen', '80 Clemons Drive', NULL, 'Salem', 'OR', '97306', '503-219-2538', 'mkoppeckl@bigcartel.com', 'Mabel Koppeck', '10/27/2013 9:25:39 AM', '8/9/2018 9:25:39 AM'),
-(NewID(), 'Hane Group', '864 Memorial Alley', NULL, 'Honolulu', 'HI', '96840', '808-591-1914', 'kdachm@patch.com', 'Ketty Dach', '10/30/2012 9:25:39 AM', '8/23/2015 9:25:39 AM'),
-(NewID(), 'Rice-Crona', '3 Melvin Street', NULL, 'West Hartford', 'CT', '06127', '860-811-9615', 'amcfien@geocities.jp', 'Alfie McFie', '4/28/2013 9:25:39 AM', '2/21/2019 9:25:39 AM'),
-(NewID(), 'Mueller and Sons', '02768 Drewry Road', NULL, 'New Orleans', 'LA', '70160', '504-760-7315', 'mstangero@ucla.edu', 'Moritz Stanger', '11/5/2010 9:25:39 AM', '2/17/2015 9:25:39 AM'),
-(NewID(), 'Borer Inc', '267 Arrowood Avenue', NULL, 'Cincinnati', 'OH', '45218', '513-958-9163', 'tstrakerp@so-net.ne.jp', NULL, '8/14/2012 9:25:39 AM', '3/19/2016 9:25:39 AM');
-GO
+(@Manufacturer1, 'Kerluke-Funk', '7 Esker Point', NULL, 'Spring', 'TX', '77388', '832-661-6162', 'bmullaly0@infoseek.co.jp', NULL, '5/23/2018 9:25:39 AM', '11/5/2018 9:25:39 AM'),
+(@Manufacturer2, 'Swift, Franecki and Moen', '45 Oak Valley Lane', NULL, 'Los Angeles', 'CA', '90045', '562-165-1785', 'esterte1@irs.gov', 'Ericka Sterte', '4/2/2010 9:25:39 AM', '4/26/2018 9:25:39 AM'),
+(@Manufacturer3, 'Larson Inc', '97710 Lakewood Avenue', NULL, 'Fargo', 'ND', '58106', '701-626-7877', 'hnewtown2@wp.com', NULL, '9/28/2015 9:25:39 AM', '1/17/2019 9:25:39 AM'),
+(@Manufacturer4, 'Boyle-Howe', '95 Lien Alley', NULL, 'Milwaukee', 'WI', '53285', '414-646-3278', 'tweinmann3@theglobeandmail.com', 'Trent Weinmann', '1/20/2011 9:25:39 AM', '11/9/2018 9:25:39 AM'),
+(@Manufacturer5, 'Hessel LLC', '5653 Butternut Court', NULL, 'San Antonio', 'TX', '78230', '210-825-1092', 'sswale4@flavors.me', NULL, '5/16/2014 9:25:39 AM', '10/16/2013 9:25:39 AM'),
+(@Manufacturer6, 'Hagenes-Brakus', '50768 Farwell Circle', NULL, 'Denver', 'CO', '80291', '303-853-0981', 'bbagger5@altervista.org', 'Brent Bagger', '5/16/2012 9:25:39 AM', '1/19/2017 9:25:39 AM'),
+(@Manufacturer7, 'Barrows Group', '61 Moland Terrace', 'Suite 200', 'Houston', 'TX', '77030', '832-383-3001', 'alappin6@yellowpages.com', NULL, '2/6/2018 9:25:39 AM', '5/22/2018 9:25:39 AM'),
+(@Manufacturer8, 'MacGyver LLC', '26 Russell Alley', NULL, 'Amarillo', 'TX', '79105', '806-589-3642', 'lmcelrath7@livejournal.com', 'Lutero McElrath', '10/22/2011 9:25:39 AM', '12/21/2017 9:25:39 AM'),
+(@Manufacturer9, 'Lehner, Williamson and Bradtke', '874 Fallview Center', NULL, 'San Diego', 'CA', '92165', '619-811-5073', 'acolt8@flavors.me', 'Ash Colt', '10/22/2011 9:25:39 AM', '9/19/2017 9:25:39 AM'),
+(@Manufacturer10, 'D''Amore and Sons', '3665 Mayer Alley', NULL, 'Atlanta', 'GA', '30356', '404-712-7982', 'kmcgragh9@digg.com', 'Kennith McGragh', '12/18/2014 9:25:39 AM', '1/23/2017 9:25:39 AM'),
+(@Manufacturer11, 'Connelly-Cartwright', '2 Pierstorff Park', NULL, 'Charleston', 'WV', '25336', '304-617-1191', 'lhowortha@harvard.edu', 'Lisha Howorth', '1/31/2010 9:25:39 AM', '4/1/2012 9:25:39 AM'),
+(@Manufacturer12, 'Crooks, Renner and Gleichner', '86 Springview Alley', NULL, 'Harrisburg', 'PA', '17140', '717-364-5422', 'dloitertonb@bandcamp.com', NULL, '3/31/2013', '12/16/2015 9:25:39 AM'),
+(@Manufacturer13, 'Schoen-Haley', '24 Lerdahl Junction', NULL, 'Trenton', 'NJ', '08608', '609-912-6602', 'ogarrochc@symantec.com', 'Olly Garroch', '2/25/2016 9:25:39 AM', '10/25/2017 9:25:39 AM'),
+(@Manufacturer14, 'Stark, Reinger and Rohan', '682 Merry Plaza', NULL, 'Washington', 'DC', '20205', '202-871-7851', 'hpraundld@hatena.ne.jp', 'Humfrey Praundl', '3/25/2017 9:25:39 AM', '6/27/2018 9:25:39 AM'),
+(@Manufacturer15, 'Huel-Aufderhar', '333 Ridge Oak Center', NULL, 'Boston', 'MA', '02216', '617-789-2407', 'dlinkee@archive.org', 'Dione Linke', '3/28/2012 9:25:39 AM', '10/29/2014 9:25:39 AM');
 
-/* insert the values into the CUSTOMERS table
-together with the ACTIVE_REWARDS and HISTORIC_REWARDS tables using variables */
-
-DECLARE @Customer1 uniqueidentifier;
-DECLARE @Customer2 uniqueidentifier;
-DECLARE @Customer3 uniqueidentifier;
-DECLARE @Customer4 uniqueidentifier;
-DECLARE @Customer5 uniqueidentifier;
-DECLARE @Customer6 uniqueidentifier;
-DECLARE @Customer7 uniqueidentifier;
-DECLARE @Customer8 uniqueidentifier;
-DECLARE @Customer9 uniqueidentifier;
-DECLARE @Customer10 uniqueidentifier;
 DECLARE @ProductType1 uniqueidentifier;
 DECLARE @ProductType2 uniqueidentifier;
 DECLARE @ProductType3 uniqueidentifier;
@@ -396,16 +420,6 @@ DECLARE @ProductType18 uniqueidentifier;
 DECLARE @ProductType19 uniqueidentifier;
 DECLARE @ProductType20 uniqueidentifier;
 
-SELECT @Customer1 = NewID();
-SELECT @Customer2 = NewID();
-SELECT @Customer3 = NewID();
-SELECT @Customer4 = NewID();
-SELECT @Customer5 = NewID();
-SELECT @Customer6 = NewID();
-SELECT @Customer7 = NewID();
-SELECT @Customer8 = NewID();
-SELECT @Customer9 = NewID();
-SELECT @Customer10 = NewID();
 SELECT @ProductType1 = NewID();
 SELECT @ProductType2 = NewID();
 SELECT @ProductType3 = NewID();
@@ -448,6 +462,28 @@ INSERT INTO PRODUCT_TYPES VALUES
 (@ProductType18, 'Silver Special Order'),
 (@ProductType19, 'Pendants'),
 (@ProductType20, 'Anklets');
+
+DECLARE @Customer1 uniqueidentifier;
+DECLARE @Customer2 uniqueidentifier;
+DECLARE @Customer3 uniqueidentifier;
+DECLARE @Customer4 uniqueidentifier;
+DECLARE @Customer5 uniqueidentifier;
+DECLARE @Customer6 uniqueidentifier;
+DECLARE @Customer7 uniqueidentifier;
+DECLARE @Customer8 uniqueidentifier;
+DECLARE @Customer9 uniqueidentifier;
+DECLARE @Customer10 uniqueidentifier;
+
+SELECT @Customer1 = NewID();
+SELECT @Customer2 = NewID();
+SELECT @Customer3 = NewID();
+SELECT @Customer4 = NewID();
+SELECT @Customer5 = NewID();
+SELECT @Customer6 = NewID();
+SELECT @Customer7 = NewID();
+SELECT @Customer8 = NewID();
+SELECT @Customer9 = NewID();
+SELECT @Customer10 = NewID();
 
 INSERT INTO CUSTOMERS VALUES
 (@Customer1, 'Cari', 'Dunsford', '4951 Moland Pass', null, 'Loretto', 'MN', '55598', '763-979-1427', 'cdunsford0@amazon.de', 1, 'f', '1970-11-01', '2010-11-03 23:06:17', '2015-03-02 10:05:27'),
