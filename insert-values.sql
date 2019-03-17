@@ -486,16 +486,16 @@ SELECT @Customer9 = NewID();
 SELECT @Customer10 = NewID();
 
 INSERT INTO CUSTOMERS VALUES
-(@Customer1, 'Cari', 'Dunsford', '4951 Moland Pass', null, 'Loretto', 'MN', '55598', '763-979-1427', 'cdunsford0@amazon.de', 1, 'f', '1970-11-01', '2010-11-03 23:06:17', '2015-03-02 10:05:27'),
-(@Customer2, 'Hector', 'Pether', '8 Golf Course Junction', null, 'Saint Paul', 'MN', '55108', '651-796-7807', 'hpether1@pbs.org', 1, 'm', '1974-12-01', '2013-09-10 00:52:43', '2016-09-29 06:23:48'),
+(@Customer1, 'Cari', 'Dunsford', '4951 Moland Pass', NULL, 'Loretto', 'MN', '55598', '763-979-1427', 'cdunsford0@amazon.de', 1, 'f', '1970-11-01', '2010-11-03 23:06:17', '2015-03-02 10:05:27'),
+(@Customer2, 'Hector', 'Pether', '8 Golf Course Junction', NULL, 'Saint Paul', 'MN', '55108', '651-796-7807', 'hpether1@pbs.org', 1, 'm', '1974-12-01', '2013-09-10 00:52:43', '2016-09-29 06:23:48'),
 (@Customer3, 'Jacklyn', 'Wolfer', '461 Schurz Drive', 'Apt 102C', 'Minneapolis', 'MN', '55480', '612-630-3593', 'jwolfer2@free.fr', 0, 'f', '1960-02-01', '2005-09-13 19:55:21', '2012-08-14 06:46:30'),
-(@Customer4, 'Leigha', 'Henaughan', '9 Del Sol Point', null, 'Monticello', 'MN', '55565', '763-110-6767', 'lhenaughan3@cisco.com', 1, 'f', '1960-02-01', '2010-11-25 11:55:43', '2012-07-08 05:12:02'),
-(@Customer5, 'Caril', 'Downage', '5 Talmadge Junction', null, 'Minneapolis', 'MN', '55487', '612-958-2901', 'cdownage4@technorati.com', 0, 'f', '1960-02-01', '2011-07-07 18:18:47', '2016-12-28 15:03:38'),
-(@Customer6, 'Phip', 'Quail', '835 Bultman Avenue', null, 'Saint Paul', 'MN', '55127', '612-590-2303', 'pquail5@toplist.cz', 0, 'm', '1955-02-10', '2016-02-12 02:53:50', '2018-11-11 01:09:15'),
-(@Customer7, 'Mildrid', 'Wilden', '7 Grim Way', null, 'Saint Paul', 'MN', '55146', '651-607-1019', 'mwilden6@typepad.com', 1, 'f', '1945-02-01', '2014-10-30 04:28:07', '2015-08-20 09:49:57'),
-(@Customer8, 'Modestine', 'Burress', '9910 Division Avenue', null, 'Saint Paul', 'MN', '55127', '651-934-3925', 'mburress7@alexa.com', 0, 'f', '1950-02-01', '2016-01-13 18:39:13', '2018-09-12 16:25:39'),
-(@Customer9, 'Helge', 'Sirrell', '86 Katie Pass', null, 'Minneapolis', 'MN', '55480', '612-303-7303', 'hsirrell8@sourceforge.net', 0, 'f', '1966-02-01', '2016-09-09 12:00:45', '2017-06-21 13:57:32'),
-(@Customer10, 'Irwinn', 'Spurrier', '607 Atwood Place', null, 'Minneapolis', 'MN', '55448', '763-538-3139', 'ispurrier9@php.net', 0, 'm', '1951-02-01', '2013-02-01 19:57:58', '2015-05-02 23:59:24');
+(@Customer4, 'Leigha', 'Henaughan', '9 Del Sol Point', NULL, 'Monticello', 'MN', '55565', '763-110-6767', 'lhenaughan3@cisco.com', 1, 'f', '1960-02-01', '2010-11-25 11:55:43', '2012-07-08 05:12:02'),
+(@Customer5, 'Caril', 'Downage', '5 Talmadge Junction', NULL, 'Minneapolis', 'MN', '55487', '612-958-2901', 'cdownage4@technorati.com', 0, 'f', '1960-02-01', '2011-07-07 18:18:47', '2016-12-28 15:03:38'),
+(@Customer6, 'Phip', 'Quail', '835 Bultman Avenue', NULL, 'Saint Paul', 'MN', '55127', '612-590-2303', 'pquail5@toplist.cz', 0, 'm', '1955-02-10', '2016-02-12 02:53:50', '2018-11-11 01:09:15'),
+(@Customer7, 'Mildrid', 'Wilden', '7 Grim Way', NULL, 'Saint Paul', 'MN', '55146', '651-607-1019', 'mwilden6@typepad.com', 1, 'f', '1945-02-01', '2014-10-30 04:28:07', '2015-08-20 09:49:57'),
+(@Customer8, 'Modestine', 'Burress', '9910 Division Avenue', NULL, 'Saint Paul', 'MN', '55127', '651-934-3925', 'mburress7@alexa.com', 0, 'f', '1950-02-01', '2016-01-13 18:39:13', '2018-09-12 16:25:39'),
+(@Customer9, 'Helge', 'Sirrell', '86 Katie Pass', NULL, 'Minneapolis', 'MN', '55480', '612-303-7303', 'hsirrell8@sourceforge.net', 0, 'f', '1966-02-01', '2016-09-09 12:00:45', '2017-06-21 13:57:32'),
+(@Customer10, 'Irwinn', 'Spurrier', '607 Atwood Place', NULL, 'Minneapolis', 'MN', '55448', '763-538-3139', 'ispurrier9@php.net', 0, 'm', '1951-02-01', '2013-02-01 19:57:58', '2015-05-02 23:59:24');
 
 INSERT INTO ACTIVE_REWARDS VALUES
 (NEWID(), @Customer1, '11/15/2018', 200, '5/15/2018'),
@@ -539,4 +539,53 @@ INSERT INTO CUSTOMER_PREFERENCES VALUES
 (@Customer9, @ProductType1, 3, 1, 0),
 (@Customer10, @ProductType11, 5, 1, 0),
 (@Customer10, @ProductType12, 8, 1, 0);
+
+DECLARE @Artist1 uniqueidentifier;
+DECLARE @Artist2 uniqueidentifier;
+DECLARE @Artist3 uniqueidentifier;
+DECLARE @Artist4 uniqueidentifier;
+DECLARE @Artist5 uniqueidentifier;
+DECLARE @Artist6 uniqueidentifier;
+DECLARE @Artist7 uniqueidentifier;
+DECLARE @Artist8 uniqueidentifier;
+DECLARE @Artist9 uniqueidentifier;
+DECLARE @Artist10 uniqueidentifier;
+DECLARE @Artist11 uniqueidentifier;
+DECLARE @Artist12 uniqueidentifier;
+DECLARE @Artist13 uniqueidentifier;
+DECLARE @Artist14 uniqueidentifier;
+DECLARE @Artist15 uniqueidentifier;
+
+SELECT @Artist1 = NewID();
+SELECT @Artist2 = NewID();
+SELECT @Artist3 = NewID();
+SELECT @Artist4 = NewID();
+SELECT @Artist5 = NewID();
+SELECT @Artist6 = NewID();
+SELECT @Artist7 = NewID();
+SELECT @Artist8 = NewID();
+SELECT @Artist9 = NewID();
+SELECT @Artist10 = NewID();
+SELECT @Artist11 = NewID();
+SELECT @Artist12 = NewID();
+SELECT @Artist13 = NewID();
+SELECT @Artist14 = NewID();
+SELECT @Artist15 = NewID();
+
+INSERT INTO ARTISTS VALUES
+(@Artist1, 'Ernest', 'Aleksandrov', '21 Dwight Pass', NULL, NULL, 'Baiyang', NULL, '65150', NULL, 'CN', '+86 517 190 5961', 'ealeksandrov0@stumbleupon.com', 70, '2014-11-10 19:13:50', '2016-10-20 21:45:03'),
+(@Artist2, 'Jarrod', 'Laba', '432 Towne Drive', NULL, NULL, 'Sunduan', NULL, '65150', NULL, 'CN', '+86 591 311 3486', 'jlaba1@shinystat.com', 53, '2014-07-16 21:23:14', '2016-12-24 14:44:42'),
+(@Artist3, 'Gordy', 'Giacovelli', '16094 Nobel Plaza', NULL, NULL, 'Macha', NULL, '65150', NULL, 'CN', '+86 972 647 9435', 'ggiacovelli2@de.vu', 60, '2017-02-19 00:40:13', '2018-11-13 09:55:29'),
+(@Artist4, 'Corbett', 'Spira', '79582 Packers Place', NULL, NULL, 'Shanjie', NULL, '65150', NULL, 'CN', '+86 748 765 2202', 'cspira3@abc.net.au', 60, '2014-09-17 08:22:10', '2016-11-13 07:53:52'),
+(@Artist5, 'Delilah', 'Fowlds', '59126 6th Drive', NULL, NULL, 'Zhaojia', NULL, '65150', NULL, 'CN', '+86 930 876 9336', 'dfowlds4@dedecms.com', 68, '2013-12-09 17:39:42', '2015-11-10 14:22:52'),
+(@Artist6, 'Libbey', 'Bardwell', '69 Maryland Road', NULL, NULL, 'Yaogu', NULL, '65150', NULL, 'CN', '+86 294 783 9631', 'lbardwell5@dmoz.org', 54, '2014-10-15 05:45:18', '2015-11-05 18:32:13'),
+(@Artist7, 'Olivier', 'Barlace', '252 Mifflin Road', NULL, NULL, 'Pingtan', NULL, '65150', NULL, 'CN', '+86 108 123 6088', 'obarlace6@smugmug.com', 60, '2012-02-01 06:43:52', '2015-08-01 17:14:32'),
+(@Artist8, 'Bennett', 'Shrieves', '22 Daystar Trail', NULL, NULL, 'Heqiao', NULL, '65150', NULL, 'CN', '+86 294 644 0613', 'bshrieves7@timesonline.co.uk', 60, '2010-02-20 05:33:05', '2014-05-16 20:47:03'),
+(@Artist9, 'Melodee', 'Moniker', '824 Johnson Road', NULL, NULL, 'Sirindhorn', NULL, '65150', NULL, 'TH', '+66 390 266 7945', 'mmoniker8@gov.uk', 60, '2014-12-25 20:42:19', '2016-05-22 14:33:10'),
+(@Artist10, 'Jacquetta', 'Dumberrill', '7553 Westport Center', NULL, NULL, 'Fuwen', NULL, '65150', NULL, 'CN', '+86 939 757 1050', 'jdumberrill9@delicious.com', 64, '2011-02-01 21:38:19', '2018-02-20 20:31:30'),
+(@Artist11, 'Marin', 'Raymond', '25 Village Green Road', NULL, NULL, 'Yongxing', NULL, '65150', NULL, 'CN', '+86 539 684 1487', 'mraymonda@miitbeian.gov.cn', 60, '2012-10-10 23:30:55', '2014-01-20 10:23:37'),
+(@Artist12, 'Candi', 'Blucher', '54043 Rockefeller Place', NULL, NULL, 'Huilong', NULL, '65150', NULL, 'CN', '+86 182 718 2406', 'cblucherb@deviantart.com', 60, '2016-01-01 18:19:25', '2017-05-04 04:10:41'),
+(@Artist13, 'Jorie', 'Grigs', '34 Meadow Valley Crossing', NULL, NULL, 'Poste du Lac', NULL, '65150', NULL, 'VN', '+84 223 447 4691', 'jgrigsc@prnewswire.com', 70, '2014-01-16 19:07:05', '2019-03-08 12:50:51'),
+(@Artist14, 'Jasmine', 'Carnow', '599 Ilene Way', NULL, NULL, 'Fengshou', NULL, '65150', NULL, 'CN', '+86 998 158 5487', 'jcarnowd@cbslocal.com', 59, '2015-01-14 13:09:32', '2015-01-23 21:26:30'),
+(@Artist15, 'Weston', 'Gartside', '729 Cascade Parkway', NULL, NULL, 'Yangjingziwan', NULL, '65150', NULL, 'CN', '+86 141 678 9507', 'wgartsidee@google.com', 58, '2012-02-01 14:02:37', '2014-03-26 17:04:36');
 GO
