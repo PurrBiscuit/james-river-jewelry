@@ -350,6 +350,9 @@ INSERT INTO EMPLOYEES VALUES
 (@Employee7, 'Banks', 'Holly', @SalesID, '5/12/2007', 0, '19460 Waywood Road', NULL, 'St Paul', 'MN', '55103', '652-845-0923', 'hbanks@jamesriverjewelry.com', '1/30/18 9:25:38 AM', '3/19/18 2:18:48 PM'),
 (@Employee8, 'Vickers', 'Martha', @SalesID, '8/11/2010', 0, '6157 Norway Maple Alley', NULL, 'St Paul', 'MN', '55103', '652-530-3294', 'mvickers@jamesriverjewelry.com', '1/30/18 9:25:39 AM', '1/30/18 9:25:39 AM' );
 
+/* insert the values into the MANUFACTURERS table
+using variables to store the uniqueidentifiers for later use */
+
 DECLARE @Manufacturer1 uniqueidentifier;
 DECLARE @Manufacturer2 uniqueidentifier;
 DECLARE @Manufacturer3 uniqueidentifier;
@@ -398,6 +401,9 @@ INSERT INTO MANUFACTURERS VALUES
 (@Manufacturer13, 'Schoen-Haley', '24 Lerdahl Junction', NULL, 'Trenton', 'NJ', '08608', '609-912-6602', 'ogarrochc@symantec.com', 'Olly Garroch', '2/25/2016 9:25:39 AM', '10/25/2017 9:25:39 AM'),
 (@Manufacturer14, 'Stark, Reinger and Rohan', '682 Merry Plaza', NULL, 'Washington', 'DC', '20205', '202-871-7851', 'hpraundld@hatena.ne.jp', 'Humfrey Praundl', '3/25/2017 9:25:39 AM', '6/27/2018 9:25:39 AM'),
 (@Manufacturer15, 'Huel-Aufderhar', '333 Ridge Oak Center', NULL, 'Boston', 'MA', '02216', '617-789-2407', 'dlinkee@archive.org', 'Dione Linke', '3/28/2012 9:25:39 AM', '10/29/2014 9:25:39 AM');
+
+/* insert the values into the PRODUCT_TYPES table
+using variables to store the uniqueidentifiers for later use */
 
 DECLARE @ProductType1 uniqueidentifier;
 DECLARE @ProductType2 uniqueidentifier;
@@ -463,6 +469,9 @@ INSERT INTO PRODUCT_TYPES VALUES
 (@ProductType19, 'Pendants'),
 (@ProductType20, 'Anklets');
 
+/* insert the values into the CUSTOMERS table
+using variables to store the uniqueidentifiers for later use */
+
 DECLARE @Customer1 uniqueidentifier;
 DECLARE @Customer2 uniqueidentifier;
 DECLARE @Customer3 uniqueidentifier;
@@ -497,6 +506,9 @@ INSERT INTO CUSTOMERS VALUES
 (@Customer9, 'Helge', 'Sirrell', '86 Katie Pass', NULL, 'Minneapolis', 'MN', '55480', '612-303-7303', 'hsirrell8@sourceforge.net', 0, 'f', '1966-02-01', '2016-09-09 12:00:45', '2017-06-21 13:57:32'),
 (@Customer10, 'Irwinn', 'Spurrier', '607 Atwood Place', NULL, 'Minneapolis', 'MN', '55448', '763-538-3139', 'ispurrier9@php.net', 0, 'm', '1951-02-01', '2013-02-01 19:57:58', '2015-05-02 23:59:24');
 
+/* insert the values into the ACTIVE_REWARDS and HISTORIC_REWARDS tables
+using the Customer variables that had previously declared and set */
+
 INSERT INTO ACTIVE_REWARDS VALUES
 (NEWID(), @Customer1, '11/15/2018', 200, '5/15/2018'),
 (NEWID(), @Customer1, '1/19/2018', 300, '7/19/2018'),
@@ -522,6 +534,9 @@ INSERT INTO HISTORIC_REWARDS VALUES
 (NEWID(), @Customer7, '3/15/2017', 350, '7/15/2017', 1),
 (NEWID(), @Customer7, '2/15/2018', 850, '11/15/2018', 0);
 
+/* insert the values into the CUSTOMER_PREFERENCES table
+using the Customer and ProductType variables that had previously declared and set */
+
 INSERT INTO CUSTOMER_PREFERENCES VALUES
 (@Customer1, @ProductType2, 10, 1, 1),
 (@Customer2, @ProductType6, 2, 0, 1),
@@ -539,6 +554,10 @@ INSERT INTO CUSTOMER_PREFERENCES VALUES
 (@Customer9, @ProductType1, 3, 1, 0),
 (@Customer10, @ProductType11, 5, 1, 0),
 (@Customer10, @ProductType12, 8, 1, 0);
+
+/* insert the values into the PRODUCTS table
+using variables to store the uniqueidentifiers for later use
+and using the ProductType variables that had previously declared and set */
 
 DECLARE @ArtisanProduct1 uniqueidentifier;
 DECLARE @ArtisanProduct2 uniqueidentifier;
@@ -664,6 +683,9 @@ INSERT INTO PRODUCTS VALUES
 (@ManufacturedProduct19, @ProductType13, 'ManufacturedProduct19 - Size 5, Womens', 500.00, 1),
 (@ManufacturedProduct20, @ProductType14, 'ManufacturedProduct20 - Size 3, Mens', 300.00, 1);
 
+/* insert the values into the ARTISTS table
+using variables to store the uniqueidentifiers for later use */
+
 DECLARE @Artist1 uniqueidentifier;
 DECLARE @Artist2 uniqueidentifier;
 DECLARE @Artist3 uniqueidentifier;
@@ -713,6 +735,9 @@ INSERT INTO ARTISTS VALUES
 (@Artist14, 'Jasmine', 'Carnow', '599 Ilene Way', NULL, NULL, 'Fengshou', NULL, '65150', NULL, 'CN', '+86 998 158 5487', 'jcarnowd@cbslocal.com', 59, '2015-01-14 13:09:32', '2015-01-23 21:26:30'),
 (@Artist15, 'Weston', 'Gartside', '729 Cascade Parkway', NULL, NULL, 'Yangjingziwan', NULL, '65150', NULL, 'CN', '+86 141 678 9507', 'wgartsidee@google.com', 58, '2012-02-01 14:02:37', '2014-03-26 17:04:36');
 
+/* insert the values into the ARTISAN_PRODUCTS table
+using the ArtisanProduct and Artist variables that had previously declared and set */
+
 INSERT INTO ARTISAN_PRODUCTS VALUES
 (@ArtisanProduct1, @Artist2, 60, '2015-08-15 08:45:56', '2017-04-24 14:28:02', '2015-03-31 23:30:14'),
 (@ArtisanProduct2, @Artist3, 65, '2017-10-01 19:09:27', '2013-06-20 13:11:09', '2018-02-23 05:54:28'),
@@ -734,6 +759,9 @@ INSERT INTO ARTISAN_PRODUCTS VALUES
 (@ArtisanProduct18, @Artist9, 71, '2018-12-18 10:54:38', '2018-04-07 10:55:32', '2013-12-19 03:09:52'),
 (@ArtisanProduct19, @Artist3, 60, '2016-10-17 11:59:32', '2017-07-21 06:16:55', '2012-11-03 22:15:50'),
 (@ArtisanProduct20, @Artist6, 64, '2016-10-08 13:16:51', '2014-09-19 01:34:02', '2018-01-24 21:06:13');
+
+/* insert the values into the MANUFACTURED_PRODUCTS table
+using the ManufacturedProduct and Manufacturer variables that had previously declared and set */
 
 INSERT INTO MANUFACTURED_PRODUCTS VALUES
 (@ManufacturedProduct1, @Manufacturer2, 5, 350.00),
@@ -773,6 +801,10 @@ DECLARE @Order13 uniqueidentifier;
 DECLARE @Order14 uniqueidentifier;
 DECLARE @Order15 uniqueidentifier;
 
+/* insert the values into the ORDERS table
+using variables to store the uniqueidentifiers for later use
+and using the Customer and Employee variables that had previously declared and set */
+
 SELECT @Order1 = NewID();
 SELECT @Order2 = NewID();
 SELECT @Order3 = NewID();
@@ -806,6 +838,9 @@ INSERT INTO ORDERS VALUES
 (@Order14, @Customer9, @Employee6, 1013, '2015-05-08 13:16:51', 1200.00, 72.00, 1272.00),
 (@Order15, @Customer10, @Employee6, 1014, '2012-03-08 13:16:51', 860.00, 51.60, 911.60);
 
+/* insert the values into the ORDER_DETAILS table
+using the ManufacturedProduct, ArtisanProduct and Order variables that had previously declared and set */
+
 INSERT INTO ORDER_DETAILS VALUES
 (@ArtisanProduct12, @Order1, 1, 1, 2700.00),
 (@ArtisanProduct17, @Order2, 1, 1, 850.00),
@@ -822,6 +857,9 @@ INSERT INTO ORDER_DETAILS VALUES
 (@ArtisanProduct19, @Order13, 1, 1, 900.00),
 (@ManufacturedProduct9, @Order14, 1, 2, 600.00),
 (@ArtisanProduct14, @Order15, 1, 1, 860.00);
+
+/* insert the values into the ARTIST_COMMISSION_HISTORY table
+using the Artist variables that had previously declared and set */
 
 INSERT INTO ARTIST_COMMISSION_HISTORY VALUES
 (NewID(), @Artist1, 55, '2015-01-05 13:16:51', 'some comments about the change to the commission'),
@@ -843,6 +881,9 @@ INSERT INTO ARTIST_COMMISSION_HISTORY VALUES
 (NewID(), @Artist6, 63, '2017-12-11 13:16:51', 'some comments about the change to the commission'),
 (NewID(), @Artist8, 64, '2010-04-19 13:16:51', 'some comments about the change to the commission');
 
+/* insert the values into the MANUFACTURED_PURCHASE_HISTORY table
+using the ManufacturedProducts variables that had previously declared and set */
+
 INSERT INTO MANUFACTURED_PURCHASE_HISTORY VALUES
 (NewID(), @ManufacturedProduct2, '2014-02-05 13:16:51', 2, 4400.00, '2014-02-07 13:16:51'),
 (NewID(), @ManufacturedProduct1, '2012-03-05 13:16:51', 5, 2000.00, '2012-03-08 13:16:51'),
@@ -862,6 +903,10 @@ INSERT INTO MANUFACTURED_PURCHASE_HISTORY VALUES
 (NewID(), @ManufacturedProduct10, '2015-11-05 13:16:51', 10, 9000.00, '2015-11-08 13:16:51'),
 (NewID(), @ManufacturedProduct14, '2014-12-05 13:16:51', 4, 3800.00, '2014-12-16 13:16:51'),
 (NewID(), @ManufacturedProduct13, '2016-03-05 13:16:51', 10, 2500.00, '2016-03-20 13:16:51');
+
+
+/* insert the values into the ARTISAN_PRODUCTS_COMMISSION_HISTORY table
+using the ArtisanProducts variables that had previously declared and set */
 
 INSERT INTO ARTISAN_PRODUCTS_COMMISSION_HISTORY VALUES
 (NewID(), @ArtisanProduct10, 60, '2013-02-05 13:16:51', NULL),
@@ -883,23 +928,26 @@ INSERT INTO ARTISAN_PRODUCTS_COMMISSION_HISTORY VALUES
 (NewID(), @ArtisanProduct19, 61, '2016-02-05 13:16:51', 'some comments about the change to the commission'),
 (NewID(), @ArtisanProduct4, 68, '2018-02-05 13:16:51', NULL);
 
+/* insert the values into the PRODUCT_PRICE_HISTORY table
+using the ArtisanProducts and ManufacturedProducts variables that had previously declared and set */
+
 INSERT INTO PRODUCT_PRICE_HISTORY VALUES
-(NewID(), @ArtisanProduct2, 275.00, '2013-02-05 13:16:51', NULL),
+(NewID(), @ArtisanProduct2, 275.00, '2013-02-05 13:16:51', 'some comments about the change to the product price'),
 (NewID(), @ArtisanProduct3, 455.00, '2013-02-05 13:16:51', NULL),
 (NewID(), @ArtisanProduct10, 1200.00, '2013-02-05 13:16:51', NULL),
-(NewID(), @ManufacturedProduct2, 2100.00, '2013-02-05 13:16:51', NULL),
-(NewID(), @ArtisanProduct11, 2050.00, '2013-02-05 13:16:51', NULL),
-(NewID(), @ArtisanProduct18, 1650.00, '2013-02-05 13:16:51', NULL),
+(NewID(), @ManufacturedProduct2, 2100.00, '2013-02-05 13:16:51', 'some comments about the change to the product price'),
+(NewID(), @ArtisanProduct11, 2050.00, '2013-02-05 13:16:51', 'some comments about the change to the product price'),
+(NewID(), @ArtisanProduct18, 1650.00, '2013-02-05 13:16:51', 'some comments about the change to the product price'),
 (NewID(), @ManufacturedProduct15, 450.00, '2013-02-05 13:16:51', NULL),
-(NewID(), @ArtisanProduct20, 1200.00, '2013-02-05 13:16:51', NULL),
+(NewID(), @ArtisanProduct20, 1200.00, '2013-02-05 13:16:51', 'some comments about the change to the product price'),
 (NewID(), @ArtisanProduct14, 900.00, '2013-02-05 13:16:51', NULL),
-(NewID(), @ArtisanProduct8, 625.00, '2013-02-05 13:16:51', NULL),
-(NewID(), @ArtisanProduct9, 550.00, '2013-02-05 13:16:51', NULL),
-(NewID(), @ArtisanProduct5, 375.00, '2013-02-05 13:16:51', NULL),
+(NewID(), @ArtisanProduct8, 625.00, '2013-02-05 13:16:51', 'some comments about the change to the product price'),
+(NewID(), @ArtisanProduct9, 550.00, '2013-02-05 13:16:51', 'some comments about the change to the product price'),
+(NewID(), @ArtisanProduct5, 375.00, '2013-02-05 13:16:51', 'some comments about the change to the product price'),
 (NewID(), @ManufacturedProduct20, 355.00, '2013-02-05 13:16:51', NULL),
 (NewID(), @ArtisanProduct19, 1050.00, '2013-02-05 13:16:51', NULL),
-(NewID(), @ArtisanProduct6, 500.00, '2013-02-05 13:16:51', NULL),
+(NewID(), @ArtisanProduct6, 500.00, '2013-02-05 13:16:51', 'some comments about the change to the product price'),
 (NewID(), @ManufacturedProduct5, 3450.00, '2013-02-05 13:16:51', NULL),
 (NewID(), @ArtisanProduct7, 2250.00, '2013-02-05 13:16:51', NULL),
-(NewID(), @ManufacturedProduct7, 1150.00, '2013-02-05 13:16:51', NULL);
+(NewID(), @ManufacturedProduct7, 1150.00, '2013-02-05 13:16:51', 'some comments about the change to the product price');
 GO
